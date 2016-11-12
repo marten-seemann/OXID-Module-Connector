@@ -175,7 +175,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * Update the ioly oxid connector
              */
             $scope.updateConnector = function (successtext) {
-                var responsePromise = IolyService.downloadModule("ioly/ioly-oxid-connector", "latest", '');
+                var responsePromise = IolyService.downloadModule("oxcom/oxcom-omc", "latest", '');
 
                 responsePromise.then(function (response) {
                     $scope.showMsg("Info", successtext);
