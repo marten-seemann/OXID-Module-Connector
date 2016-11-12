@@ -629,7 +629,7 @@ class omc_main extends oxAdminView
         $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
         if ($aFiles && is_array($aFiles)) {
             foreach (array_keys($aFiles) as $filePath) {
-                if (strpos($filePath, "metadata.php") !== false && strpos($filePath, "metadata.php.") === false) {
+                if (strpos($filePath, "/metadata.php") !== false && strpos($filePath, "/metadata.php.") === false) {
                     $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
                     if (file_exists($metaPath)) {
                         include $metaPath;
