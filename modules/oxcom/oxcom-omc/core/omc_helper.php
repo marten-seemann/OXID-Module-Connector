@@ -90,6 +90,8 @@ class omc_helper extends oxSuperCfg
 
         $headerStatus = "HTTP/1.1 200 Ok";
 
+        // ignore any module output, e.g. activation errors!
+        ob_start();
         if (!in_array($moduleId, array_keys($aModules))) {
             $msg .= "module not found: $moduleId!<br/>";
         } else {
@@ -102,7 +104,7 @@ class omc_helper extends oxSuperCfg
                 $oConfig->setShopId($sShopId);
 
                 foreach ($aModules as $sModuleId => $oModule) {
-                    if ($moduleId != $sModuleId) {
+                    if (strtolower($moduleId) != strtolower($sModuleId)) {
                         continue;
                     }
                     /**
@@ -124,7 +126,7 @@ class omc_helper extends oxSuperCfg
                                 }
                             } else {
                                 if ($oModule->activate()) {
-                                    $msg .= "$sModuleId - aktivated<br/>";
+                                    $msg .= "$sModuleId - activated<br/>";
                                 } else {
                                     $msg .= "$sModuleId - error activating<br/>";
                                 }
@@ -162,6 +164,7 @@ class omc_helper extends oxSuperCfg
                 }
             }
         }
+        ob_end_clean();
         return array("header" => $headerStatus, "message" => $msg);
     }
     /**
