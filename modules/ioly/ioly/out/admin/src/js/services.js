@@ -8,7 +8,7 @@ angular.module('main.services', [])
  * A simple angular value
  * @type string
  */
-.value('version', '0.0.1')
+.value('version', '0.1.0')
 
 /**
  * Service factory for calling our simple PHP interface
@@ -25,8 +25,8 @@ angular.module('main.services', [])
     });
   }
   return {
-    getAllModules: function(searchText, page, pageSize, orderBy, orderDir, onlyInstalled, onlyActive){
-        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getAllModulesAjax',page: page, pageSize: pageSize, orderBy: orderBy, orderDir: orderDir, searchstring: searchText, onlyInstalled: onlyInstalled, onlyActive: onlyActive}});
+    getAllModules: function(searchText, page, pageSize, orderBy, orderDir, onlyInstalled, onlyActive, selectedTags){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getAllModulesAjax',page: page, pageSize: pageSize, orderBy: orderBy, orderDir: orderDir, searchstring: searchText, onlyInstalled: onlyInstalled, onlyActive: onlyActive, selectedTags: JSON.stringify(selectedTags)}});
     },
     downloadModule: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'downloadModuleAjax',moduleid: moduleid, moduleversion: moduleversion}});
@@ -48,6 +48,9 @@ angular.module('main.services', [])
     },
     getModuleHooks: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getModuleHooksAjax',moduleid: moduleid, moduleversion: moduleversion}});
+    },
+    getAllTags: function(searchText, onlyInstalled, onlyActive, selectedTags){
+      return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getAllTagsAjax', searchstring: searchText, onlyInstalled: onlyInstalled, onlyActive: onlyActive, selectedTags: JSON.stringify(selectedTags)}});
     },
     isModuleActive: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'isModuleActiveAjax',moduleid: moduleid, moduleversion: moduleversion}});

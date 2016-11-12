@@ -16,6 +16,15 @@
 
     <div ng-controller="IolyCtrl">
 
+        <script type="text/ng-template" id="my-tags-template">
+            <div class="tag-template" ng-class="data.selected ? 'active' : ''">
+                <div>
+                    <span ng-class="data.selected ? 'active' : ''">{{data.text}}</span>
+                    <a ng-if="data.selected" class="remove-button" ng-click="$removeTag()">&#10006;</a>
+                </div>
+            </div>
+        </script>
+
         [{if $iolyerrorfatal ne ''}]
             <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h1>
             <div class="error alert alert-danger alert-dismissable">
@@ -37,31 +46,34 @@
             </script>
         
             <div id="iolyheadline">
-                <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h1>
-                <div id="iolyinfo">
-                    <div id='iolyintrotext'>[{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]</div>
-                    <div id="contributors">
-                        <ul id='contributorslist'>
-                            <li ng-repeat="contributor in contributors | unique: 'login'">
-                                <a target='_blank' href='{{contributor.html_url}}'><img ng-src='{{contributor.avatar_url}}' style='border-radius: 100%; width: 20px;' alt='{{contributor.login}}' title='{{contributor.login}}' border='0'/></a>
-                            </li>
-                        </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h1>
                     </div>
                 </div>
-                <br/>
                 <div class="row">
-                    <div class="col-sm-10">
-                        <label class="btn btn-primary" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</label>
-                        <label class="btn btn-primary" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</label>
-                        <label class="btn btn-primary" ng-click="updateConnector('[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_SUCCESS'}]')">[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_BUTTON'}]</label>
-                    </div>
                     <!-- Split button -->
+                    <div class="col-sm-10">
+                        <div id="iolyinfo">
+                            <div id='iolyintrotext'>[{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]</div>
+                            <div id="contributors">
+                                <ul id='contributorslist'>
+                                    <li ng-repeat="contributor in contributors | unique: 'login'">
+                                        <a target='_blank' href='{{contributor.html_url}}'><img ng-src='{{contributor.avatar_url}}' style='border-radius: 100%; width: 20px;' alt='{{contributor.login}}' title='{{contributor.login}}' border='0'/></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-2">
                         <div class="btn-group dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle btn-small buttonwidth">
                                 [{oxmultilang ident='IOLY_DROPDOWN_MORE_ACTIONS'}] <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</a></li>
+                                <li><a href="#" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</a></li>
+                                <li><a href="#" ng-click="updateConnector('[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_SUCCESS'}]')">[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_BUTTON'}]</a></li>
                                 <li><a href="#" ng-click="generateViews()">[{oxmultilang ident='IOLY_CREATE_VIEWS'}]</a></li>
                                 <li><a href="#" ng-click="emptyTmp()">[{oxmultilang ident='IOLY_CLEAR_TEMP'}]</a></li>
                             </ul>
@@ -100,10 +112,30 @@
                 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.trustedMsg"></span></alert>
             </div>
 
-            <div id="filters">
-                <input type="checkbox" name="onlyInstalled" id="onlyInstalled" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_INSTALLED"}]
-                <input type="checkbox" name="onlyActive" id="onlyActive" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_ACTIVE"}]
-            </div>
+            <accordion>
+                <accordion-group is-open="isOpen">
+                    <accordion-heading>
+                        Filter
+                        <i ng-class="{'glyphicon-minus':isOpen,'glyphicon-plus':!isOpen}"></i>
+                    </accordion-heading>
+                    <div id="filters">
+                        <input type="checkbox" name="onlyInstalled" id="onlyInstalled" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_INSTALLED"}]
+                        <input type="checkbox" name="onlyActive" id="onlyActive" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_ACTIVE"}]
+                    </div>
+                    <div class="clear"></div>
+
+                    <div id="tags">
+                        <tags-input
+                                on-tag-clicked="filterTag($tag)"
+                                on-tag-removed="tagRemoved($tag)"
+                                ng-model="currentTags"
+                                class="ti-input-sm"
+                                placeholder="-"
+                                template="my-tags-template">
+                        </tags-input>
+                    </div>
+                </accordion-group>
+            </accordion>
 
             <table id="iolyNgTable" ng-table="tableParams" show-filter="true" class="table">
                 <tbody>
@@ -185,7 +217,7 @@
                 </tr>
                 </tbody>
             </table>
-                                
+
         [{/if}]
     </div>
 </div> <!-- /magicarea -->
@@ -194,7 +226,7 @@
 
 <hr>
 
-<div style="font-size: 11px; margin-bottom: 10px;">
+<div id="iolyInfoFooter">
 	[{oxmultilang ident="IOLY_VERSION_MODULE"}] <b>[{ $oView->getModuleVersion() }]</b> &mdash; [{oxmultilang ident="IOLY_VERSION_CORE"}] <b>[{ $oView->getIolyCoreVersion() }]</b>
 	[{ if $oView->getIolyCookbookVersion()|count > 0  }]
 		 &mdash; [{oxmultilang ident="IOLY_VERSION_RECIPES"}]

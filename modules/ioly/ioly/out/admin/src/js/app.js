@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.bootstrap', 'angular-loading-bar']).
+var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.bootstrap', 'angular-loading-bar', 'ngTagsInput']).
         controller('IolyCtrl', function ($scope, ngTableParams, IolyService, $modal, $document, $timeout, $location, $anchorScroll, $sce) {
 
             // Register a body reference to use later
@@ -90,6 +90,49 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             $scope.getContributors();
 
             /**
+             * TAGS
+             */
+            $scope.isOpen = false;
+            $scope.selectedTags = [];
+            $scope.currentTags = [];
+            /**
+             * Read contributors list from Github
+             */
+            $scope.getTags = function(searchText, onlyInstalled, onlyActive, selectedTags) {
+                var responsePromise = IolyService.getAllTags(searchText, onlyInstalled, onlyActive, selectedTags);
+                $scope.currentTags = [];
+
+                responsePromise.then(function (response) {
+                    angular.forEach(response.data.status, function(value, key) {
+                        $scope.currentTags.push({"idx": key, "text": value, "selected": $scope.isSelected(value), "active": 1});
+                    });
+                    //console.log($scope.currentTags);
+                }, function (error) {
+                    console.log(error);
+                    $scope.addAlert('danger', error.data.message);
+                });
+            };
+            $scope.isSelected = function(value) {
+                if ($scope.selectedTags.indexOf(value) > -1) return 1;
+                return 0;
+            };
+
+            /**
+             * Filter by tags
+             * @param tag
+             */
+            $scope.filterTag = function(tag) {
+                $scope.selectedTags.push(tag.text);
+                $scope.refreshTable();
+            };
+            $scope.tagRemoved = function(tag) {
+                console.log(tag.text);
+                // remove from array
+                $scope.selectedTags = $scope.selectedTags.filter(function(e) { return e !== tag.text })
+                $scope.refreshTable();
+            };
+
+            /**
              * 
              * Update the recipes db
              */
@@ -159,11 +202,13 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * @param string successtext
              */
             $scope.downloadModule = function (packageString, moduleversion, successtext) {
-                console.log("loading module " + packageString + ", version:" + moduleversion);
+                console.log("loading module " + packageString + ", version: " + moduleversion);
                 // first check for pre- and postinstall hooks
                 var preInstall, postInstall, msg;
                 var hooksPromise = IolyService.getModuleHooks(packageString, moduleversion);
                 hooksPromise.then(function (response) {
+                    console.log("hooks");
+                    console.log(response);
                     // check for hook data
                     if(typeof response.data.status[0] !== "undefined") {
                         preInstall = response.data.status[0].preinstall;
@@ -189,9 +234,11 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         }
                     }
                     // now start the download
-                var responsePromise = IolyService.downloadModule(packageString, moduleversion);
+                    var responsePromise = IolyService.downloadModule(packageString, moduleversion);
                     // and wait for response...
                     responsePromise.then(function (response) {
+                        console.log("download");
+                        console.log(response);
                         // in case of success, check postinstall hook data...
                         msg = '';
                         if(postInstall && typeof postInstall.message !== "undefined") {
@@ -216,16 +263,18 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                             // show default text only
                             $scope.showMsg("Info", successtext);
                         }
-                    // reload ng-table, too
-                    $scope.refreshTable();
+                        // reload ng-table, too
+                        $scope.refreshTable();
+                    }, function (error) {
+                        console.error(error);
+                        $scope.addAlert('danger', error.data.message);
+                    });
+
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
-                }, function (error) {
-                    console.log(error);
-                    $scope.addAlert('danger', error.data.message);
-                });
+
             };
 
         /**
@@ -330,13 +379,14 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     }
                     var onlyInstalled = document.getElementById('onlyInstalled').checked;
                     var onlyActive = document.getElementById('onlyActive').checked;
-                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir, onlyInstalled, onlyActive);
+                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir, onlyInstalled, onlyActive, $scope.selectedTags);
                     responsePromise.then(function (response) {
                         params.total(response.data.numObjects);
                         var data = response.data.result;
                         $defer.resolve(data);
                         console.log("table data received: " + response.data.numObjects);
                         $scope.numRecipes = response.data.numObjects;
+                        $scope.getTags(searchText, onlyInstalled, onlyActive, $scope.selectedTags);
                     }, function (error) {
                         $scope.addAlert('error', error.data + " (Error " + error.status + ")");
                     });

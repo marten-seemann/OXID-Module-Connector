@@ -41,13 +41,17 @@
 }
 .iolyinfodiv {
     overflow:hidden;
-    margin-top: 15px; 
+    margin-top: 15px;
 }
 #iolyintrotext {
     padding-bottom: 10px;
 }
 #iolyNgTable {
     margin-top: 10px;
+}
+#iolyInfoFooter {
+    padding-left: 10px;
+    font-size: 11px;
 }
 .iolydownloadtd {
     width: 500px;
@@ -122,4 +126,21 @@ h2 {
 h3 {
 	font-size: 15px;
 	color: orange;
+}
+
+.clear {
+    height: 10px;
+    clear: both;
+}
+div.tags input {
+    border: none;
+}
+.tag-template {
+    cursor: pointer; cursor: hand;
+}
+.tag-template .active {
+}
+.tag-template span.active {
+    font-weight: bold;
+    text-decoration: underline;
 }

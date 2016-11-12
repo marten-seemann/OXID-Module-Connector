@@ -36,6 +36,7 @@ class ioly_main extends oxAdminView
     protected $_ioly = null;
     protected $_iolyHelper = null;
     protected $_allModules = null;
+    protected $_allTags = array();
     protected $_currSortKey = '';
     /**
      * Required JS libs and versions
@@ -171,7 +172,8 @@ class ioly_main extends oxAdminView
             // filter module list
             $onlyInstalled = (oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "1" ) ? true : false;
             $onlyActive = (oxRegistry::getConfig()->getRequestParameter('onlyActive') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyActive') == "1") ? true : false;
-            $this->_filterModules($onlyInstalled, $onlyActive);
+            $selectedTags = json_decode(oxRegistry::getConfig()->getRequestParameter('selectedTags'));
+            $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags);
 
             $numItems = count($this->_allModules);
             // sort by requested field
@@ -213,8 +215,9 @@ class ioly_main extends oxAdminView
      * Filter modules
      * @param boolean $onlyInstalled Only show installed modules
      * @param boolean $onlyActive    Only show installed and active modules
+     * @param array   $selectedTags  Tags to filter
      */
-    protected function _filterModules($onlyInstalled = false, $onlyActive = true)
+    protected function _filterModules($onlyInstalled = false, $onlyActive = true, $selectedTags = array())
     {
         if ($onlyActive) {
             $onlyInstalled = true;
@@ -240,6 +243,17 @@ class ioly_main extends oxAdminView
                     }
                 }
             }
+            // filter by tags
+            $tagsFound = 0;
+            foreach ($selectedTags as $tag) {
+                if (in_array($tag, array_map('strtolower', $aPackage['tags']))) {
+                    $tagsFound++;
+                }
+            }
+            if ($tagsFound < count($selectedTags)) {
+                $addModule = false;
+            }
+
             if ($addModule) {
                 $this->_allModules[$idx] = $aPackage;
             } else {
@@ -351,6 +365,59 @@ class ioly_main extends oxAdminView
     }
 
     /**
+     * Read "tags" data from module package
+     */
+    public function getModuleTagsAjax()
+    {
+        $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
+        $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
+        try {
+            $value = $this->_ioly->getJsonValueFromPackage($moduleId, $moduleVersion, "tags");
+            $headerStatus = "HTTP/1.1 200 Ok";
+            $res = array("status" => $value);
+        } catch (Exception $ex) {
+            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+            $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
+        }
+        $this->_returnJsonResponse($headerStatus, $res);
+    }
+
+    /**
+     * Get all "tags" from all modules
+     */
+    public function getAllTagsAjax()
+    {
+        try {
+            // fill internal variable
+            $this->getAllModules();
+            if ($this->_allModules && is_array($this->_allModules)) {
+
+                // filter module list
+                $onlyInstalled = (oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "1") ? true : false;
+                $onlyActive = (oxRegistry::getConfig()->getRequestParameter('onlyActive') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyActive') == "1") ? true : false;
+                $selectedTags = json_decode(oxRegistry::getConfig()->getRequestParameter('selectedTags'));
+                //oxRegistry::getUtils()->writeToLog("\nTAGS: " . print_r($selectedTags, true), "ioly_debug.txt");
+                $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags);
+
+                foreach ($this->_allModules as $idx => $aPackage) {
+                    // save tags of remaining modules
+                    $this->_allTags = array_merge($this->_allTags, array_map('strtolower', array_map('strtolower', array_values($aPackage['tags']))));
+                }
+                $headerStatus = "HTTP/1.1 200 Ok";
+                $this->_allTags = array_values(array_unique($this->_allTags));
+                sort($this->_allTags);
+                //oxRegistry::getUtils()->writeToLog("\nTAGS: " . print_r($this->_allTags, true), "ioly_debug.txt");
+                $res = array("status" => $this->_allTags);
+            }
+        } catch (Exception $ex) {
+            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+            $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
+        }
+
+        $this->_returnJsonResponse($headerStatus, $res);
+    }
+
+    /**
      * Download module via AJAX
      */
     public function downloadModuleAjax()
@@ -366,6 +433,7 @@ class ioly_main extends oxAdminView
             $res = array("status" => $success);
         } catch (Exception $ex) {
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
+            oxRegistry::getUtils()->writeToLog("\nDownload status: " . $ex->getMessage(), "ioly_debug.txt");
             $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
         }
         $this->_returnJsonResponse($headerStatus, $res);
