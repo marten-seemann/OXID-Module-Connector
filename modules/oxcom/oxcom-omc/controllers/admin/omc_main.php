@@ -744,7 +744,7 @@ class omc_main extends oxAdminView
     public function iolyAutoUpdate()
     {
         $message_success = $message_error = '';
-        if (oxRegistry::getConfig()->getConfigParam('omccookbookurl') == true) {
+        if (oxRegistry::getConfig()->getConfigParam('omcautoupdate') == true) {
             if ($this->updateIoly()) {
                 $message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS') . '<br>';
             } else {
@@ -760,7 +760,7 @@ class omc_main extends oxAdminView
             try {
                 $this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
                 oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
-                $success = $this->_ioly->install("oxcom/oxid-modul-connetor", "latest");
+                $success = $this->_ioly->install("oxcom/oxid-modul-connector", "latest");
                 $message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS') . '<br>';
                 $res = array("status" => $success);
             } catch (Exception $ex) {
