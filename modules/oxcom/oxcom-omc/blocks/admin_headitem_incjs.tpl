@@ -1,6 +1,6 @@
 [{$smarty.block.parent}]
 
-[{if $oViewConf->getActiveClassName() eq "ioly_main"}]
+[{if $oViewConf->getActiveClassName() eq "omc_main"}]
 
     <script src="[{$iolyHelper->getIolyLibPath('angular.js', '1.3.0', 'angular.min.js')}]" type="text/javascript"></script>                    
     <script src="[{$iolyHelper->getIolyLibPath('bootstrap-gh-pages', '0.11.2', 'ui-bootstrap-tpls-0.11.2.min.js')}]" type="text/javascript"></script>                    

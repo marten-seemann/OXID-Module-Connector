@@ -82,7 +82,7 @@
                 </div>      
             </div>
             <div id="iolylogo">
-                <img src="[{$oViewConf->getModuleUrl('ioly', 'ioly_logo.png')}]" border="0" alt="" title=""/>
+                <img src="[{$oViewConf->getModuleUrl('oxcom-omc', 'oxcom-omc_logo.png')}]" border="0" alt="" title=""/>
                 <div id="recipeCounter">
                     {{numRecipes}} [{oxmultilang ident="IOLY_RECIPES"}]
                 </div>

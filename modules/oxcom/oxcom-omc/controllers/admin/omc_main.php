@@ -14,13 +14,13 @@
  * @link     http://getioly.com/
  * @version     1.9.1
  */
-class ioly_main extends oxAdminView
+class omc_main extends oxAdminView
 {
     /**
      * Current class template name.
      * @var string
      */
-    protected $_sThisTemplate = 'ioly_main.tpl';
+    protected $_sThisTemplate = 'omc_main.tpl';
     /**
      * URL to ioly core (ioly.php)
      * @var string
@@ -43,7 +43,7 @@ class ioly_main extends oxAdminView
      * @var array
      */
     protected $_requiredJsLibs = array(
-        "ioly/oxid-connector-js-libs" => "1.0.0"
+        "oxcom/oxid-connector-js-libs" => "1.0.0"
     );
     /**
      * Filter ioly modules for OXID
@@ -56,8 +56,8 @@ class ioly_main extends oxAdminView
      */
     public function __construct()
     {
-        $this->_iolyCore = getShopBasePath() . '/modules/ioly/ioly/ioly.php';
-        $this->_authFile = getShopBasePath() . '/modules/ioly/ioly/.auth';
+        $this->_iolyCore = getShopBasePath() . '/modules/oxcom/oxcom-omc/ioly.php';
+        $this->_authFile = getShopBasePath() . '/modules/oxcom/oxcom-omc/.auth';
         if ($this->_initIoly()) {
             $this->_checkForJsLibs();
         }
@@ -107,7 +107,7 @@ class ioly_main extends oxAdminView
      */
     protected function _setCookbooks()
     {
-        if (($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
+        if (($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('omccookbookurl')) && is_array($aCookbookUrls)) {
             // remove local zip files
             $this->_ioly->clearCookbooks();
             // and download new ones....
@@ -123,7 +123,7 @@ class ioly_main extends oxAdminView
      */
     public function allowActivation()
     {
-        return oxRegistry::getConfig()->getShopConfVar('iolyenableinst');
+        return oxRegistry::getConfig()->getShopConfVar('omcenableinst');
     }
 
     /**
@@ -186,7 +186,7 @@ class ioly_main extends oxAdminView
             }
             $data = array_slice($this->_allModules, $offset, $pageSize, false);
             // check if module is active?
-            if (oxRegistry::getConfig()->getShopConfVar('iolycheckactive')) {
+            if (oxRegistry::getConfig()->getShopConfVar('omccheckactive')) {
                 foreach ($data as $idx => $aPackage) {
                     $aVersions = $aPackage['versions'];
                     $packageId = $aPackage['packageString'];
@@ -643,12 +643,12 @@ class ioly_main extends oxAdminView
 
     /**
      * Return our helper class for the view
-     * @return ioly_helper
+     * @return omc_helper
      */
     public function getIolyHelper()
     {
         if ($this->_iolyHelper === null) {
-            $this->_iolyHelper = oxRegistry::get('ioly_helper');
+            $this->_iolyHelper = oxRegistry::get('omc_helper');
         }
         return $this->_iolyHelper;
     }
@@ -713,7 +713,7 @@ class ioly_main extends oxAdminView
      */
     public function getModuleVersion()
     {
-        $sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir") . "modules/ioly/ioly/metadata.php";
+        $sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir") . "modules/oxcom/oxcom-omc/metadata.php";
         include $sMetaDataPath;
         return $aModule["version"];
     }
@@ -744,7 +744,7 @@ class ioly_main extends oxAdminView
     public function iolyAutoUpdate()
     {
         $message_success = $message_error = '';
-        if (oxRegistry::getConfig()->getConfigParam('iolyautoupdate') == true) {
+        if (oxRegistry::getConfig()->getConfigParam('omccookbookurl') == true) {
             if ($this->updateIoly()) {
                 $message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS') . '<br>';
             } else {
@@ -760,7 +760,7 @@ class ioly_main extends oxAdminView
             try {
                 $this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
                 oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
-                $success = $this->_ioly->install("ioly/ioly-oxid-connector", "latest");
+                $success = $this->_ioly->install("oxcom/oxid-modul-connetor", "latest");
                 $message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS') . '<br>';
                 $res = array("status" => $success);
             } catch (Exception $ex) {

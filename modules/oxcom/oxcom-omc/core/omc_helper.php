@@ -13,7 +13,7 @@
  * @link     http://getioly.com/
  * @version  1.9.0
  */
-class ioly_helper extends oxSuperCfg
+class omc_helper extends oxSuperCfg
 {
     /**
      * Return the path to the global lib dir
@@ -27,7 +27,7 @@ class ioly_helper extends oxSuperCfg
         // fallback for old version
         $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'ioly/libs/' .$sModuleId . '/' . $sVersion;
         if (!file_exists($sFilePath)) {
-            $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/ioly/ioly/libs/' .$sModuleId . '/' . $sVersion;
+            $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/oxcom/oxcom-omc/libs/' .$sModuleId . '/' . $sVersion;
         }
         if ($sFileName != '') {
             $sFilePath .= '/' . $sFileName;
@@ -41,7 +41,7 @@ class ioly_helper extends oxSuperCfg
      */
     public function getIolyPath($sFilePath)
     {
-        $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/ioly/ioly/' .$sFilePath;
+        $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/oxcom/oxcom-omc/' .$sFilePath;
         return $sFilePath;
     }
 
