@@ -12,14 +12,13 @@ $aModule = array(
     'id'          => 'oxcom-omc',
     'title'       => 'OXID Modul Connector',
     'description' => array(
-        'de' => '',
-        'en' => '',
+        'de' => 'Installierte OXID-Module verwalten und neue Module finden',
+        'en' => 'Manage installed OXID modules and find new ones',
     ),
     'thumbnail'   => '',
     'version'     => '1.0.0',
     'author'      => 'OXID Community',
     'url'         => 'https://github.com/OXIDprojects/OXID-Modul-Connector',
-    'email'       => 'community@oxid-esales.com',
     'extend'      => array(
     ),
     'files'       => array(
