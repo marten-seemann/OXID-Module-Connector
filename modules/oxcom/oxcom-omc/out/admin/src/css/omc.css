@@ -28,20 +28,7 @@
     height: 150px; /*hight of the spinner gif +2px to fix IE8 issue */
 }   
 #magicarea {
-    margin-left: 10px;
-}
-#magicarea #iolyheadline {
-    float:left;
-    width: 750px;
-}
-#magicarea #iolylogo {
-    float:right;
-    margin-right: 5px;
-    margin-top:-17px;
-}
-.iolyinfodiv {
-    overflow:hidden;
-    margin-top: 15px;
+    padding: 20px;
 }
 #iolyintrotext {
     padding-bottom: 10px;
@@ -115,17 +102,19 @@ tbody>tr>td.iolynoline {
 h1 {
 	font-size: 20px;
 	font-weight: bold;
+    margin: 0;
 }
 
 h2 {
 	font-size: 15px;
 	font-weight: bold;
-	margin: 15px 0 15px 0;
+	margin: 0;
 }
 
 h3 {
 	font-size: 15px;
 	color: orange;
+    margin: 0;
 }
 
 .clear {
@@ -146,4 +135,55 @@ div.tags input {
 }
 #priceslider {
     width: 50%;
+}
+
+.table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
+    border: none;
+}
+
+.moduleBox {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.moduleBoxHeader {
+    border-top: 3px solid #ff3600;
+    border-radius-: 5px;
+}
+
+.moduleBoxContent {
+    padding: 15px;
+    width: 100%;
+}
+
+.moduleBoxContentLeft {
+    float: left;
+    width: 55%;
+}
+.moduleBoxContentMiddle {
+    float: left;
+    width: 15%;
+}
+.moduleBoxContentRight {
+    float: right;
+    text-align: center;
+    width: 30%;
+}
+.moduleBoxActions {
+    margin-bottom: 8px;
+}
+.moduleBoxDesc {
+    margin-right: 20px;
+}
+.moduleBoxInfos {
+    line-height: 2;
+}
+
+.ng-table-pager, .omcHeadline {
+    padding: 0 25px 0 11px;
+}
+
+.ng-table th.sortable, .table thead:first-child tr:first-child th {
+    padding: 10px;
+    margin: 0;
 }
