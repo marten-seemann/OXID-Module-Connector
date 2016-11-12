@@ -60,7 +60,7 @@ ul.iolylist li, ul.pagination li, ul.dropdown-menu li{
     font-style: italic;
 }
 span.success {
-    color: green;
+    color: #4FA44F;
     font-weight: bold;
 }
 /* ng-table fixes */
@@ -133,9 +133,6 @@ div.tags input {
     font-weight: bold;
     text-decoration: underline;
 }
-#priceslider {
-    width: 50%;
-}
 
 .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
     border: none;
@@ -144,6 +141,11 @@ div.tags input {
 .moduleBox {
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.moduleBoxHeaderInstalled {
+    border-top: 3px solid #4FA44F;
+    border-radius-: 5px;
 }
 
 .moduleBoxHeader {
@@ -187,3 +189,4 @@ div.tags input {
     padding: 10px;
     margin: 0;
 }
+
