@@ -84,9 +84,13 @@ $aLang = array(
     'IOLY_CLEAR_TEMP'                           => 'TMP leeren',
     'IOLY_DETAILS_TAGS'                           => 'Tags:',
     'IOLY_CREATE_VIEWS'                         => 'Views neu erzeugen',
-    'IOLY_ONLY_INSTALLED'                       => 'Nur installierte',
-    'IOLY_ONLY_ACTIVE'                          => 'Nur aktivierte',
+    'IOLY_ONLY_INSTALLED'                       => 'nur installierte Module anzeigen',
+    'IOLY_ONLY_ACTIVE'                          => 'nur aktivierte Module anzeigen',
     'IOLY_DETAILS_ACTIVE'                          => 'Modul aktiv',
+    'IOLY_DETAILS_FILTER'                          => 'Modulfilter',
+    'IOLY_DETAILS_FILTER_PRICE'                          => 'Preisspanne',
+    'IOLY_DETAILS_FILTER_TAGS'                          => 'Tags',
     'IOLY_DETAILS_INSTALLED'                          => 'Modul installiert',
+    'IOLY_DETAILS_NOINSTALL'                          => 'Für dieses Modul ist eine Installation leider nicht möglich, da keine Download-URL hinterlegt wurde.',
 );
 ?>

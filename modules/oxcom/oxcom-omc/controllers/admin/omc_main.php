@@ -693,7 +693,8 @@ class omc_main extends oxAdminView
      */
     public function getShopMainVersion()
     {
-        return substr(oxRegistry::getConfig()->getVersion(), 0, 3);
+        $aVersion = explode(".", oxRegistry::getConfig()->getVersion());
+        return $aVersion[0].".".$aVersion[1];
     }
 
     /**
