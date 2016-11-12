@@ -12,6 +12,10 @@
     [{assign var="disableSharedEdit" value=""}]
 [{/if}]
 
+<form>
+    <input type="hidden" name="shopid" id="shopid" value="[{ $shopid }]">
+</form>
+
 <div id="magicarea" ng-app="main">
 
     <div ng-controller="IolyCtrl">
@@ -153,7 +157,11 @@
                                     <div class="moduleBoxDesc">
                                         <h2>{{module.name}}</h2><br>
                                         <p>{{module.desc.[{$langabbrev}]}}</p>
-                                        <p>[{oxmultilang ident="IOLY_DETAILS_TAGS"}] {{module.tags}}</p> [{* moises *}]
+                                        <p>[{oxmultilang ident="IOLY_DETAILS_TAGS"}]
+                                            <ul>
+                                                <li ng-repeat="tag in module.tags">{{tag}}</li>
+                                            </ul>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="moduleBoxContentMiddle">
@@ -165,7 +173,7 @@
                                         <div ng-show="module.installed" style="margin-bottom: 4px;">
                                             <span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_INSTALLED'}]
                                         </div>
-                                        <div ng-show="module.active"> [{* moises *}]
+                                        <div ng-show="module.active">
                                             <span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_ACTIVE'}]
                                         </div>
 

@@ -68,7 +68,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 responsePromise.then(function (response) {
                     $scope.showMsg("Info", response.data.status);
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -82,7 +82,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 responsePromise.then(function (response) {
                     $scope.contributors = response.data;
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -93,15 +93,15 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             $scope.selectedTags = [];
             $scope.priceRange = {};
             $scope.priceRange.from = 0.0;
-            $scope.priceRange.to = 200.0;
+            $scope.priceRange.to = 10000.0;
             //Range slider config
             $scope.minRangeSlider = {
                 minValue: 0,
-                maxValue: 5000,
+                maxValue: 9999,
                 options: {
                     floor: 0,
-                    ceil: 5000,
-                    step: 10,
+                    ceil: 10000,
+                    step: 25,
                     id: 'priceslider',
                     onEnd: function(sliderId, modelValue, highValue, pointerType) {
                         console.log("END " + modelValue + " - " + highValue);
@@ -120,18 +120,16 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * Read tags from backend
              */
             $scope.getTags = function(searchText, onlyInstalled, onlyActive, selectedTags, priceRange) {
-                console.log("pricerange");
-                console.log($scope.priceRange);
                 var responsePromise = IolyService.getAllTags(searchText, onlyInstalled, onlyActive, selectedTags, priceRange);
                 $scope.currentTags = [];
-
                 responsePromise.then(function (response) {
-                    angular.forEach(response.data.status, function(value, key) {
-                        $scope.currentTags.push({"idx": key, "text": value, "selected": $scope.isSelected(value)});
-                    });
-                    //console.log($scope.currentTags);
+                    if (response !== null && response.data !== null && typeof response.data.status !== "undefined") {
+                        angular.forEach(response.data.status, function(value, key) {
+                            $scope.currentTags.push({"idx": key, "text": value, "selected": $scope.isSelected(value)});
+                        });
+                    }
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -166,7 +164,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -182,7 +180,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -204,7 +202,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * @param string successtext
              */
             $scope.removeModule = function (packageString, moduleversion, successtext) {
-                console.log("removing module " + packageString + ", version:" + moduleversion);
+                console.log("removing module " + packageString + ", version: " + moduleversion);
                 var responsePromise = IolyService.removeModule(packageString, moduleversion);
 
                 responsePromise.then(function (response) {
@@ -212,7 +210,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
-                    console.log(error);
+                    console.error(error);
                     $scope.addAlert('danger', error.data.message);
                 });
             };
@@ -229,8 +227,6 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var preInstall, postInstall, msg;
                 var hooksPromise = IolyService.getModuleHooks(packageString, moduleversion);
                 hooksPromise.then(function (response) {
-                    console.log("hooks");
-                    console.log(response);
                     // check for hook data
                     if(typeof response.data.status[0] !== "undefined") {
                         preInstall = response.data.status[0].preinstall;
@@ -259,8 +255,6 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     var responsePromise = IolyService.downloadModule(packageString, moduleversion);
                     // and wait for response...
                     responsePromise.then(function (response) {
-                        console.log("download");
-                        console.log(response);
                         // in case of success, check postinstall hook data...
                         msg = '';
                         if(postInstall && typeof postInstall.message !== "undefined") {
@@ -317,7 +311,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 minput += "<div id='shops'><h2>Shop-Ids (comma-separated, e.g. '1,2,5' or 'all' for all shops)</h2><input type='text' name='shopids' id='shopids' value='all'></div>";
                 $scope.showMsg(headline + " " + moduleid, minput, $scope.submitActivateModule);
             }, function (error) {
-                console.log(error);
+                console.error(error);
                 $scope.addAlert('danger', error.data.status);
             });
         };
@@ -329,11 +323,14 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             var responsePromise = IolyService.activateModule(moduleId, shopIds, deactivate, moduleVersion);
 
             responsePromise.then(function (response) {
+                var shopId = $document[0].querySelector('#shopid').value;
                 $scope.showMsg("Info", response.data.status);
+                // reload shop navi
+                top.oxid.admin.reloadNavigation(shopId);
                 // reload ng-table, too
                 $scope.refreshTable();
             }, function (error) {
-                console.log(error);
+                console.error(error);
                 $scope.addAlert('danger', error.data.status);
             });
         };
@@ -352,7 +349,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             responsePromise.then(function (response) {
                 $scope.showMsg("Info", response.data.status);
             }, function (error) {
-                console.log(error);
+                console.error(error);
                 $scope.addAlert('danger', error.data.message);
             });
         };
@@ -366,7 +363,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             responsePromise.then(function (response) {
                 $scope.showMsg("Info", response.data.status);
             }, function (error) {
-                console.log(error);
+                console.error(error);
                 $scope.addAlert('danger', error.data.message);
             });
         };
