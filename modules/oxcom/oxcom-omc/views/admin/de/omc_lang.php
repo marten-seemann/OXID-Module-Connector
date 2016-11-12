@@ -87,6 +87,6 @@ $aLang = array(
     'IOLY_ONLY_INSTALLED'                       => 'Nur installierte',
     'IOLY_ONLY_ACTIVE'                          => 'Nur aktivierte',
     'IOLY_DETAILS_ACTIVE'                          => 'Modul aktiv',
-    'IOLY_DETAILS_INSTALLED'                          => 'Modul aktiviert',
+    'IOLY_DETAILS_INSTALLED'                          => 'Modul installiert',
 );
 ?>
