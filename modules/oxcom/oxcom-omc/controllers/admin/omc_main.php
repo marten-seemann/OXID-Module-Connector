@@ -173,7 +173,8 @@ class omc_main extends oxAdminView
             $onlyInstalled = (oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "1" ) ? true : false;
             $onlyActive = (oxRegistry::getConfig()->getRequestParameter('onlyActive') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyActive') == "1") ? true : false;
             $selectedTags = json_decode(oxRegistry::getConfig()->getRequestParameter('selectedTags'));
-            $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags);
+            $priceRange = json_decode(oxRegistry::getConfig()->getRequestParameter('priceRange'));
+            $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags, $priceRange);
 
             $numItems = count($this->_allModules);
             // sort by requested field
@@ -216,8 +217,9 @@ class omc_main extends oxAdminView
      * @param boolean $onlyInstalled Only show installed modules
      * @param boolean $onlyActive    Only show installed and active modules
      * @param array   $selectedTags  Tags to filter
+     * @param object  $priceRange    Price range (from - to)
      */
-    protected function _filterModules($onlyInstalled = false, $onlyActive = true, $selectedTags = array())
+    protected function _filterModules($onlyInstalled = false, $onlyActive = true, $selectedTags = array(), $priceRange)
     {
         if ($onlyActive) {
             $onlyInstalled = true;
@@ -253,7 +255,18 @@ class omc_main extends oxAdminView
             if ($tagsFound < count($selectedTags)) {
                 $addModule = false;
             }
+            // filter by price
+            $dPrice = floatval($aPackage['price']);
+            if ($dPrice >= $priceRange->from && $dPrice <= $priceRange->to) {
+                $inRange = true;
+            } else {
+                $inRange = false;
+            }
+            if (!$inRange) {
+                $addModule = false;
+            }
 
+            // add module?
             if ($addModule) {
                 $this->_allModules[$idx] = $aPackage;
             } else {
@@ -396,8 +409,8 @@ class omc_main extends oxAdminView
                 $onlyInstalled = (oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "1") ? true : false;
                 $onlyActive = (oxRegistry::getConfig()->getRequestParameter('onlyActive') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyActive') == "1") ? true : false;
                 $selectedTags = json_decode(oxRegistry::getConfig()->getRequestParameter('selectedTags'));
-                //oxRegistry::getUtils()->writeToLog("\nTAGS: " . print_r($selectedTags, true), "ioly_debug.txt");
-                $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags);
+                $priceRange = json_decode(oxRegistry::getConfig()->getRequestParameter('priceRange'));
+                $this->_filterModules($onlyInstalled, $onlyActive, $selectedTags, $priceRange);
 
                 foreach ($this->_allModules as $idx => $aPackage) {
                     // save tags of remaining modules

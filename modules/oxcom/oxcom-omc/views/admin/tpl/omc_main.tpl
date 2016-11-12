@@ -134,6 +134,11 @@
                                 template="my-tags-template">
                         </tags-input>
                     </div>
+
+                    <div id="priceslider">
+                        <rzslider rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
+                    </div>
+
                 </accordion-group>
             </accordion>
 

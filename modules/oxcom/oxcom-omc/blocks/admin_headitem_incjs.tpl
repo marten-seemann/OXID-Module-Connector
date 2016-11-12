@@ -8,6 +8,7 @@
     <script src="[{$iolyHelper->getIolyLibPath('angular-loading-bar', '0.6.0', 'loading-bar.js')}]" type="text/javascript"></script>
 
     <script src="[{$iolyHelper->getIolyPath('out/admin/src/js/ng-tags-input.min.js')}]" type="text/javascript"></script>
+    <script src="[{$iolyHelper->getIolyPath('out/admin/src/js/rzslider.min.js')}]" type="text/javascript"></script>
 
     <script src="[{$iolyHelper->getIolyPath('out/admin/src/js/services.js')}]" type="text/javascript"></script>                    
     <script src="[{$iolyHelper->getIolyPath('out/admin/src/js/filters.js')}]" type="text/javascript"></script>                    

@@ -1,4 +1,4 @@
-var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.bootstrap', 'angular-loading-bar', 'ngTagsInput']).
+var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.bootstrap', 'angular-loading-bar', 'ngTagsInput', 'rzModule']).
         controller('IolyCtrl', function ($scope, ngTableParams, IolyService, $modal, $document, $timeout, $location, $anchorScroll, $sce) {
 
             // Register a body reference to use later
@@ -89,22 +89,45 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             // call it right "on load"...
             $scope.getContributors();
 
+            $scope.isOpen = false;
+            $scope.selectedTags = [];
+            $scope.priceRange = {};
+            $scope.priceRange.from = 0.0;
+            $scope.priceRange.to = 200.0;
+            //Range slider config
+            $scope.minRangeSlider = {
+                minValue: 0,
+                maxValue: 5000,
+                options: {
+                    floor: 0,
+                    ceil: 5000,
+                    step: 10,
+                    id: 'priceslider',
+                    onEnd: function(sliderId, modelValue, highValue, pointerType) {
+                        console.log("END " + modelValue + " - " + highValue);
+                        $scope.priceRange.from = modelValue;
+                        $scope.priceRange.to = highValue;
+                        $scope.refreshTable();
+                    }
+                }
+            };
             /**
              * TAGS
              */
-            $scope.isOpen = false;
-            $scope.selectedTags = [];
             $scope.currentTags = [];
+
             /**
-             * Read contributors list from Github
+             * Read tags from backend
              */
-            $scope.getTags = function(searchText, onlyInstalled, onlyActive, selectedTags) {
-                var responsePromise = IolyService.getAllTags(searchText, onlyInstalled, onlyActive, selectedTags);
+            $scope.getTags = function(searchText, onlyInstalled, onlyActive, selectedTags, priceRange) {
+                console.log("pricerange");
+                console.log($scope.priceRange);
+                var responsePromise = IolyService.getAllTags(searchText, onlyInstalled, onlyActive, selectedTags, priceRange);
                 $scope.currentTags = [];
 
                 responsePromise.then(function (response) {
                     angular.forEach(response.data.status, function(value, key) {
-                        $scope.currentTags.push({"idx": key, "text": value, "selected": $scope.isSelected(value), "active": 1});
+                        $scope.currentTags.push({"idx": key, "text": value, "selected": $scope.isSelected(value)});
                     });
                     //console.log($scope.currentTags);
                 }, function (error) {
@@ -126,7 +149,6 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 $scope.refreshTable();
             };
             $scope.tagRemoved = function(tag) {
-                console.log(tag.text);
                 // remove from array
                 $scope.selectedTags = $scope.selectedTags.filter(function(e) { return e !== tag.text })
                 $scope.refreshTable();
@@ -379,14 +401,14 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     }
                     var onlyInstalled = document.getElementById('onlyInstalled').checked;
                     var onlyActive = document.getElementById('onlyActive').checked;
-                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir, onlyInstalled, onlyActive, $scope.selectedTags);
+                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir, onlyInstalled, onlyActive, $scope.selectedTags, $scope.priceRange);
                     responsePromise.then(function (response) {
                         params.total(response.data.numObjects);
                         var data = response.data.result;
                         $defer.resolve(data);
                         console.log("table data received: " + response.data.numObjects);
                         $scope.numRecipes = response.data.numObjects;
-                        $scope.getTags(searchText, onlyInstalled, onlyActive, $scope.selectedTags);
+                        $scope.getTags(searchText, onlyInstalled, onlyActive, $scope.selectedTags, $scope.priceRange);
                     }, function (error) {
                         $scope.addAlert('error', error.data + " (Error " + error.status + ")");
                     });

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="[{$oViewConf->getModuleUrl("oxcom-omc", 'out/admin/src/css/ng-tags-input.min.css')}]">
     <link rel="stylesheet" href="[{$oViewConf->getModuleUrl("oxcom-omc", 'out/admin/src/css/ng-tags-input.bootstrap.min.css')}]">
 
+<link rel="stylesheet" href="[{$oViewConf->getModuleUrl("oxcom-omc", 'out/admin/src/css/rzslider.min.css')}]">
+
     <link rel="stylesheet" href="[{$oViewConf->getModuleUrl("oxcom-omc", 'out/admin/src/css/omc.css')}]">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 [{/if}]

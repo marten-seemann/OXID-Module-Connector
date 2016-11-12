@@ -144,3 +144,6 @@ div.tags input {
     font-weight: bold;
     text-decoration: underline;
 }
+#priceslider {
+    width: 50%;
+}
