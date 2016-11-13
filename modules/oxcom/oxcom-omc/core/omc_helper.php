@@ -24,11 +24,7 @@ class omc_helper extends oxSuperCfg
      */
     public function getIolyLibPath($sModuleId, $sVersion, $sFileName = '')
     {
-        // fallback for old version
-        $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'ioly/libs/' .$sModuleId . '/' . $sVersion;
-        if (!file_exists($sFilePath)) {
-            $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/oxcom/oxcom-omc/libs/' .$sModuleId . '/' . $sVersion;
-        }
+        $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/oxcom/oxcom-omc/libs/' .$sModuleId . '/' . $sVersion;
         if ($sFileName != '') {
             $sFilePath .= '/' . $sFileName;
         }

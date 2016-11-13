@@ -39,13 +39,6 @@ class omc_main extends oxAdminView
     protected $_allTags = array();
     protected $_currSortKey = '';
     /**
-     * Required JS libs and versions
-     * @var array
-     */
-    protected $_requiredJsLibs = array(
-        "oxcom/oxid-connector-js-libs" => "1.0.0"
-    );
-    /**
      * Filter ioly modules for OXID
      * @var array
      */
@@ -58,26 +51,8 @@ class omc_main extends oxAdminView
     {
         $this->_iolyCore = getShopBasePath() . '/modules/oxcom/oxcom-omc/ioly.php';
         $this->_authFile = getShopBasePath() . '/modules/oxcom/oxcom-omc/.auth';
-        if ($this->_initIoly()) {
-            $this->_checkForJsLibs();
-        }
-    }
+        $this->_initIoly();
 
-    /**
-     * Check if AngularJS, JQuery etc. are avaliable
-     * If not, download them via ioly core :)
-     */
-    protected function _checkForJsLibs()
-    {
-        foreach ($this->_requiredJsLibs as $jsLib => $jsVersion) {
-            if (!$this->_ioly->isInstalled($jsLib)) {
-                try {
-                    $this->_ioly->install($jsLib, $jsVersion);
-                } catch (Exception $ex) {
-                    $this->addTplParam("iolyerrorfatal", $ex->getMessage());
-                }
-            }
-        }
     }
 
     /**
