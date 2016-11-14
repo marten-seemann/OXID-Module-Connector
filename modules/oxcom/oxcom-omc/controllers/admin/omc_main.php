@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.9.1
+ * @version     2.0.0
  */
 class omc_main extends oxAdminView
 {
@@ -68,7 +68,7 @@ class omc_main extends oxAdminView
         }
         if (file_exists($this->_iolyCore)) {
             include_once $this->_iolyCore;
-            $this->_ioly = new ioly\ioly();
+            $this->_ioly = new ioly\ioly($this->_getCookbooks());
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
             return true;
@@ -77,12 +77,23 @@ class omc_main extends oxAdminView
     }
 
     /**
+     * Get defined cookbooks array from OXID backend settings
+     * @return bool|mixed
+     */
+    protected function _getCookbooks()
+    {
+        if (($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('omccookbookurl')) && is_array($aCookbookUrls)) {
+            return $aCookbookUrls;
+        }
+        return false;
+    }
+    /**
      * Set multiple cookbooks as defined in module settings.
      * @return null
      */
     protected function _setCookbooks()
     {
-        if (($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('omccookbookurl')) && is_array($aCookbookUrls)) {
+        if (($aCookbookUrls = $this->_getCookbooks())) {
             // remove local zip files
             $this->_ioly->clearCookbooks();
             // and download new ones....
