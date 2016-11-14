@@ -70,9 +70,9 @@ class omc_main extends oxAdminView
         if (file_exists($this->_iolyCore)) {
             include_once $this->_iolyCore;
             $this->_ioly = new ioly\ioly(true);
-            $this->_setCookbooks(false);
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
+            $this->_setCookbooks(false);
             return true;
         }
         return false;
