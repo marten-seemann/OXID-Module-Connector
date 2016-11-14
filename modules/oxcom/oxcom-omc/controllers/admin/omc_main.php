@@ -51,8 +51,9 @@ class omc_main extends oxAdminView
     {
         $this->_iolyCore = getShopBasePath() . '/modules/oxcom/oxcom-omc/ioly.php';
         $this->_authFile = getShopBasePath() . '/modules/oxcom/oxcom-omc/.auth';
-        $this->_initIoly();
-
+        if ($this->_ioly === null) {
+            $this->_initIoly();
+        }
     }
 
     /**
@@ -68,7 +69,8 @@ class omc_main extends oxAdminView
         }
         if (file_exists($this->_iolyCore)) {
             include_once $this->_iolyCore;
-            $this->_ioly = new ioly\ioly($this->_getCookbooks());
+            $this->_ioly = new ioly\ioly(true);
+            $this->_setCookbooks(false);
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
             return true;
@@ -89,15 +91,15 @@ class omc_main extends oxAdminView
     }
     /**
      * Set multiple cookbooks as defined in module settings.
+     * @param bool $forceDownload Force zip download?
      * @return null
      */
-    protected function _setCookbooks()
+    protected function _setCookbooks($forceDownload = false)
     {
         if (($aCookbookUrls = $this->_getCookbooks())) {
-            // remove local zip files
-            $this->_ioly->clearCookbooks();
+            $this->_ioly->resetCookbooks();
             // and download new ones....
-            $this->_ioly->setCookbooks($aCookbookUrls);
+            $this->_ioly->setCookbooks($aCookbookUrls, $forceDownload);
             return true;
         }
         return false;
@@ -298,7 +300,7 @@ class omc_main extends oxAdminView
     public function updateRecipesAjax()
     {
         try {
-            $this->_setCookbooks();
+            $this->_setCookbooks(true);
             $msg = oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS');
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $msg);
@@ -780,9 +782,6 @@ class omc_main extends oxAdminView
      */
     public function render()
     {
-        parent::render();
-
-        $this->iolyAutoUpdate();
         // add curr language abbrevation to the template
         $iLang = oxRegistry::getLang()->getTplLanguage();
         $sLang = oxRegistry::getLang()->getLanguageAbbr($iLang);
@@ -792,6 +791,9 @@ class omc_main extends oxAdminView
         if ($isAjax) {
             die("ajax");
         }
+        parent::render();
+
+        $this->iolyAutoUpdate();
 
         return $this->_sThisTemplate;
     }
