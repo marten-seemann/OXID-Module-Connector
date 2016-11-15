@@ -111,6 +111,11 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     }
                 }
             };
+            $scope.$watch('isOpen', function() {
+                if ($scope.isOpen) {
+                    $scope.$broadcast('rzSliderForceRender'); //Force refresh sliders on render. Otherwise bullets are aligned at left side.
+                }
+            }, true);
             /**
              * TAGS
              */

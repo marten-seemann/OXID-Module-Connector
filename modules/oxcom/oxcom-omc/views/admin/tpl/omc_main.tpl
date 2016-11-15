@@ -106,7 +106,7 @@
             <div class="row omcHeadline">
                 <div class="col-sm-12">
                     <accordion>
-                        <accordion-group is-open="isOpen">
+                        <accordion-group is-open="$parent.isOpen">
                             <accordion-heading>
                                 [{oxmultilang ident='IOLY_DETAILS_FILTER'}]
                             </accordion-heading>
