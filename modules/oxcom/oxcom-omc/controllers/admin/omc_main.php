@@ -762,7 +762,7 @@ class omc_main extends oxAdminView
             try {
                 $this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
                 oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
-                $success = $this->_ioly->install("oxcom/oxid-modul-connector", "latest");
+                $success = $this->_ioly->install("oxcom/oxcom-omc", "latest");
                 $message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS') . '<br>';
                 $res = array("status" => $success);
             } catch (Exception $ex) {
