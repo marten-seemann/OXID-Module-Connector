@@ -21,8 +21,9 @@
         <script type="text/ng-template" id="my-tags-template">
             <div class="tag-template" ng-class="data.selected ? 'active' : ''">
                 <div>
-                    <span ng-class="data.selected ? 'active' : ''">{{data.text}}</span>
-                    <a ng-if="data.selected" class="remove-button" ng-click="$removeTag()">&#10006;</a>
+                    <a ng-if="data.selected" class="" ng-click="$removeTag()"><span ng-class="data.selected ? 'active' : ''">{{data.text}}</span></a>
+                    <span ng-if="!data.selected" ng-class="data.selected ? 'active' : ''">{{data.text}}</span>
+                    [{* <a ng-if="data.selected" class="remove-button" ng-click="$removeTag()">&#10006;</a> *}]
                 </div>
             </div>
         </script>
