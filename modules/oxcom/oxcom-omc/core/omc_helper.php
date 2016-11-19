@@ -1,17 +1,10 @@
 <?php
 /**
- * ioly
- *
- * PHP version 5.3
- *
- * @category ioly_modulmanager
- * @package  OXID Connector
- * @author   Dave Holloway <dh@gn2-netwerk.de>
- * @author   Tobias Merkl <merkl@proudsourcing.de>
- * @author   Stefan Moises <stefan@rent-a-hero.de>
- * @license  MIT License http://opensource.org/licenses/MIT
- * @link     http://getioly.com/
- * @version  1.9.0
+ * @package   oxcom-omc
+ * @category  OXID Modul Connector
+ * @license   MIT License http://opensource.org/licenses/MIT
+ * @link      https://github.com/OXIDprojects/OXID-Module-Connector
+ * @version   1.0.0
  */
 class omc_helper extends oxSuperCfg
 {
@@ -89,12 +82,12 @@ class omc_helper extends oxSuperCfg
         // ignore any module output, e.g. activation errors!
         ob_start();
         if (!in_array($moduleId, array_keys($aModules))) {
-            $msg .= "module not found: $moduleId!<br/>";
+            $msg .= "Modul nicht gefunden: <b>$moduleId</b><br/>";
         } else {
             if ($deactivate) {
-                $msg .= "De-";
+                #$msg .= "De-";
             }
-            $msg .= "Activating module $moduleId for shop ids: " . implode(", ", $aShopIds) . "<br/>";
+            $msg .= "Modulaktivierung <b>$moduleId</b> für Shop-ID <i>" . implode(", ", $aShopIds) . "</i> ...<br/>";
             foreach ($aShopIds as $sShopId) {
                 // set shopId
                 $oConfig->setShopId($sShopId);
@@ -107,7 +100,7 @@ class omc_helper extends oxSuperCfg
                      * @var oxmodule $oModule
                      */
                     if (!$deactivate) {
-                        $msg .= "shopId [$sShopId]: activating module: $sModuleId<br/>";
+                        $msg .= "Shop-ID $sShopId: Aktiviere $sModuleId ...<br/>";
                         try {
                             if (class_exists('oxModuleInstaller')) {
                                 /** @var oxModuleCache $oModuleCache */
@@ -116,15 +109,15 @@ class omc_helper extends oxSuperCfg
                                 $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
 
                                 if ($oModuleInstaller->activate($oModule)) {
-                                    $msg .= "$sModuleId - activated<br/>";
+                                    $msg .= "$sModuleId aktiviert!<br/>";
                                 } else {
-                                    $msg .= "$sModuleId - error activating<br/>";
+                                    $msg .= "$sModuleId - Fehler beim Aktivieren<br/>";
                                 }
                             } else {
                                 if ($oModule->activate()) {
-                                    $msg .= "$sModuleId - activated<br/>";
+                                    $msg .= "$sModuleId aktiviert!<br/>";
                                 } else {
-                                    $msg .= "$sModuleId - error activating<br/>";
+                                    $msg .= "$sModuleId - Fehler beim Aktivieren<br/>";
                                 }
                             }
                         } catch (oxException $oEx) {
@@ -132,7 +125,7 @@ class omc_helper extends oxSuperCfg
                             $headerStatus = "HTTP/1.1 500 Internal Server Error";
                         }
                     } else { // deactivate!
-                        $msg .= "shopId [$sShopId]: deactivating module: $sModuleId<br/>";
+                        $msg .= "Shop-ID $sShopId: Deaktiviere $sModuleId ...<br/>";
                         try {
                             if (class_exists('oxModuleInstaller')) {
                                 /** @var oxModuleCache $oModuleCache */
@@ -141,15 +134,15 @@ class omc_helper extends oxSuperCfg
                                 $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
 
                                 if ($oModuleInstaller->deactivate($oModule)) {
-                                    $msg .= "$sModuleId - deactivated<br/>";
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
                                 } else {
-                                    $msg .= "$sModuleId - error deactivating<br/>";
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren<br/>";
                                 }
                             } else {
                                 if ($oModule->deactivate()) {
-                                    $msg .= "$sModuleId - deactivated<br/>";
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
                                 } else {
-                                    $msg .= "$sModuleId - error deactivating<br/>";
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren<br/>";
                                 }
                             }
                         } catch (oxException $oEx) {
@@ -178,11 +171,11 @@ class omc_helper extends oxSuperCfg
         $oShop->generateViews();
         foreach ($aShopIds as $sShopId) {
             $oShop->load($sShopId);
-            $msg .= "Generating views for ShopID $sShopId ...<br/>";
+            $msg .= "Views für Shop-ID <i>$sShopId</i> werden aktualisiert ...<br/>";
             $oShop->generateViews();
         }
 
-        $msg .= "<br/>Views generated!";
+        $msg .= "<br/>Update erfolgreich!";
         $headerStatus = "HTTP/1.1 200 Ok";
         return array("header" => $headerStatus, "message" => $msg);
     }
@@ -199,12 +192,12 @@ class omc_helper extends oxSuperCfg
         while (($filename = readdir($d)) !== false) {
             $filepath = $tmpdir . $filename;
             if (is_file($filepath)) {
-                $msg .= "Deleting $filepath ...<br>";
+                $msg .= "$filepath ...<br>";
                 unlink($filepath);
             }
         }
         $headerStatus = "HTTP/1.1 200 Ok";
-        $msg .= "<br/>Tmp clean!!";
+        $msg .= "<br/>Verzeichnis wurde geleert!";
         return array("header" => $headerStatus, "message" => $msg);
     }
 }

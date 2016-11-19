@@ -44,7 +44,7 @@ angular.module('main.services', [])
         return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'downloadModuleAjax',moduleid: moduleid, moduleversion: moduleversion}});
     },
     getContributors: function(){
-        return $http.get('https://api.github.com/repos/ioly/ioly/contributors');
+        return $http.get('https://api.github.com/repos/OXIDprojects/OXID-Module-Connector/contributors');
     },
     getModuleHooks: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'getModuleHooksAjax',moduleid: moduleid, moduleversion: moduleversion}});

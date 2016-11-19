@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package   oxcom-omc
+ * @category  OXID Modul Connector
+ * @license   MIT License http://opensource.org/licenses/MIT
+ * @link      https://github.com/OXIDprojects/OXID-Module-Connector
+ * @version   1.0.0
+ */
  
 /**
  * Metadata version

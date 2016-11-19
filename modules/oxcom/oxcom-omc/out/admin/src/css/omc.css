@@ -28,7 +28,7 @@
     height: 150px; /*hight of the spinner gif +2px to fix IE8 issue */
 }   
 #magicarea {
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
 }
 #iolyintrotext {
     padding-bottom: 10px;
@@ -91,8 +91,13 @@ tbody>tr>td.iolynoline {
     background: none;
     padding: 0 10px 0 0;
 }
-    
+
+#contributors {
+    margin-top: 30px;
+}
+
 #contributorslist {
+    padding-top: 10px;
 	list-style-type: none;
 }
 #recipeCounter {
@@ -113,7 +118,7 @@ h2 {
 
 h3 {
 	font-size: 15px;
-	color: orange;
+	color: red;
     margin: 0;
 }
 
@@ -175,14 +180,21 @@ div.tags input {
     margin-bottom: 8px;
 }
 .moduleBoxDesc {
-    margin-right: 20px;
+    margin-right: 30px;
+    line-height: 1.5;
 }
 .moduleBoxInfos {
     line-height: 2;
 }
 
 .ng-table-pager, .omcHeadline {
-    padding: 0 25px 0 11px;
+    margin: 0 25px 0 9px;
+}
+
+#filter {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
 }
 
 .ng-table th.sortable, .table thead:first-child tr:first-child th {
@@ -190,3 +202,27 @@ div.tags input {
     margin: 0;
 }
 
+.input-group-sm tags-input .tags .tag-item, tags-input.ti-input-sm .tags .tag-item {
+    height: auto;
+    padding: 5px 10px 5px 10px;
+    line-height: 1;
+    margin: 5px;
+}
+
+.input-group-sm tags-input .tags .input, tags-input.ti-input-sm .tags .input {
+    display: none;
+}
+
+.tags {
+    border: 0!important;
+}
+
+.tag-template span.active {
+    text-decoration: none;
+    color: #ffcc00;
+}
+
+.picture {
+    max-width: 150px;
+    max-height: 150px;
+}

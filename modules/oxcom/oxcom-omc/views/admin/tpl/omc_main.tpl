@@ -17,14 +17,12 @@
 </form>
 
 <div id="magicarea" ng-app="main">
-
     <div ng-controller="IolyCtrl">
-
         <script type="text/ng-template" id="my-tags-template">
             <div class="tag-template" ng-class="data.selected ? 'active' : ''">
                 <div>
                     <span ng-class="data.selected ? 'active' : ''">{{data.text}}</span>
-                    <a ng-if="data.selected" class="remove-button" ng-click="$removeTag()">&#10006;</a>
+                    [{*<a ng-if="data.selected" class="remove-button" ng-click="$removeTag()">&#10006;</a>*}]
                 </div>
             </div>
         </script>
@@ -44,17 +42,23 @@
                     {{content}}
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
-                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                    <button class="btn btn-primary" ng-click="cancel()">[{oxmultilang ident="IOLY_BUTTON_CANCEL"}]</button>
+                    <button class="btn btn-primary" ng-click="ok()">[{oxmultilang ident="IOLY_BUTTON_OK"}]</button>
                 </div>
             </script>
         
             [{* headline *}]
             <div class="row omcHeadline">
-                <div class="col-sm-10">
+                <div class="col-sm-10" style="padding: 0;">
                     <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}] ({{numRecipes}} [{oxmultilang ident="IOLY_RECIPES"}])</h1>
+                    <div style="line-height: 1.5;">
+                        [{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]
+                    </div>
+                    <p>&nbsp;</p>
+                    <b>[{oxmultilang ident='IOLY_DETAILS_FILTER'}]</b>
+                    <br><br>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2" style="padding: 0;">
                     <div class="btn-group dropdown pull-right">
                         <button type="button" class="btn btn-success dropdown-toggle btn-small">
                             <span class="glyphicon glyphicon-th-list"></span>
@@ -67,12 +71,6 @@
                             <li><a href="#" ng-click="emptyTmp()">[{oxmultilang ident='IOLY_CLEAR_TEMP'}]</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-
-            <div class="row omcHeadline">
-                <div class="col-sm-12">
-                    <hr>
                 </div>
             </div>
 
@@ -104,39 +102,33 @@
 
             [{* filter *}]
             <div class="row omcHeadline">
-                <div class="col-sm-12">
-                    <accordion>
-                        <accordion-group is-open="isOpen">
-                            <accordion-heading>
-                                [{oxmultilang ident='IOLY_DETAILS_FILTER'}]
-                            </accordion-heading>
-                            <div id="tags" style="float: left;  width: 60%;">
-                                [{oxmultilang ident='IOLY_DETAILS_FILTER_TAGS'}]
-                                <br><br>
-                                <tags-input
-                                        on-tag-clicked="filterTag($tag)"
-                                        on-tag-removed="tagRemoved($tag)"
-                                        ng-model="currentTags"
-                                        class="ti-input-sm"
-                                        placeholder="-"
-                                        template="my-tags-template">
-                                </tags-input>
+                <div id="filter">
+                    <div class="col-sm-6">
+                        <div id="tags">
+                            <tags-input
+                                    on-tag-clicked="filterTag($tag)"
+                                    on-tag-removed="tagRemoved($tag)"
+                                    ng-model="currentTags"
+                                    class="ti-input-sm"
+                                    placeholder="-"
+                                    template="my-tags-template">
+                            </tags-input>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5">
+                        <div>
+                            <input type="checkbox" name="onlyInstalled" id="onlyInstalled" value="1" ng-click="refreshTable()"><label for="onlyInstalled" style="font-weight: normal;">&nbsp; [{oxmultilang ident="IOLY_ONLY_INSTALLED"}]</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" name="onlyActive" id="onlyActive" value="1" ng-click="refreshTable()"><label for="onlyActive" style="font-weight: normal;">&nbsp; [{oxmultilang ident="IOLY_ONLY_ACTIVE"}]</label>
+                            <p>&nbsp;</p>
+                            <div id="priceslider">
+                                <rzslider rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
                             </div>
-                            <div style="float: left;  width: 10%;">&nbsp;</div>
-                            <div id="filters" style="float: left; width: 30%;">
-                                <input type="checkbox" name="onlyInstalled" id="onlyInstalled" value="1" ng-click="refreshTable()">&nbsp; [{oxmultilang ident="IOLY_ONLY_INSTALLED"}]
-                                <br><br>
-                                <input type="checkbox" name="onlyActive" id="onlyActive" value="1" ng-click="refreshTable()">&nbsp; [{oxmultilang ident="IOLY_ONLY_ACTIVE"}]
-                                <p>&nbsp;</p>
-                                [{oxmultilang ident='IOLY_DETAILS_FILTER_PRICE'}]
-                                <br><br>
-                                <div id="priceslider">
-                                    <rzslider rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </accordion-group>
-                    </accordion>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <br>
                 </div>
             </div>
 
@@ -155,28 +147,22 @@
                             <div class="moduleBoxContent">
                                 <div class="moduleBoxContentLeft">
                                     <div class="moduleBoxDesc">
-                                        <h2>{{module.name}}</h2><br>
-                                        <p>{{module.desc.[{$langabbrev}]}}</p>
-                                        <p>[{oxmultilang ident="IOLY_DETAILS_TAGS"}]
-                                            <ul>
-                                                <li ng-repeat="tag in module.tags">{{tag}}</li>
-                                            </ul>
-                                        </p>
+                                        <h2>{{module.name}}</h2>
+                                        <div style="color:#ccc; margin: 5px 0 5px 0;">&mdash;</div>
+                                        <span>{{module.desc.[{$langabbrev}]}}</span>
+                                        <div style="color:#ccc; margin: 5px 0 5px 0;">&mdash;</div>
+                                        <b>Anbieter:</b> {{module.vendor}}
+                                        &nbsp;&middot;&nbsp;
+                                        <b>Lizenz:</b> {{module.license}}
+                                        &nbsp;&middot;&nbsp;
+                                        <b>Preis:</b> <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}} &euro;</span>
+                                        <br>
+                                        <b>Tags:</b> <span ng-repeat="tag in module.tags">{{tag}}<span ng-if="!$last">, </span></span>
                                     </div>
                                 </div>
                                 <div class="moduleBoxContentMiddle">
                                     <div class="moduleBoxInfos">
-                                        <span class="glyphicon glyphicon-user"></span>&nbsp; <a href="https://github.com/OXIDprojects/OXID-Module-Connector/tree/recipes/{{module.vendor}}" target="_blank">{{module.vendor}}</a>
-                                        <br>
-                                        <span class="glyphicon glyphicon-book"></span>&nbsp; {{module.license}}<br>
-                                        <span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}} &euro;</span>
-                                        <div ng-show="module.installed" style="margin-bottom: 4px;">
-                                            <span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_INSTALLED'}]
-                                        </div>
-                                        <div ng-show="module.active">
-                                            <span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_ACTIVE'}]
-                                        </div>
-
+                                        <span ng-show="module.picture"><br><img src="{{module.picture}}" border="0" alt="{{module.name}}" title="{{module.name}}" class="picture"></span>
                                     </div>
                                 </div>
                                 <div class="moduleBoxContentRight">
@@ -194,7 +180,7 @@
                                                         <button tooltip-placement="top" tooltip="[{oxmultilang ident='IOLY_REINSTALL_MODULE_HINT'}]" type="submit" ng-click="downloadModule(module.packageString, key, '[{oxmultilang ident="IOLY_MODULE_DOWNLOAD_SUCCESS"}]')" class="loadModuleButton btn btn-large" ng-class="{'btn-warning': version.matches, 'btn-error' : !version.matches}"><span class="glyphicon glyphicon-repeat"></span> [{oxmultilang ident="IOLY_BUTTON_DOWNLOAD_VERSION_3" }]</button> &nbsp;
                                                         [{if $oView->allowActivation()}]
                                                             <span class="btn-group dropdown">
-                                                                <button type="button" class="btn btn-primary dropdown-toggle btn-large ">
+                                                                <button type="button" tooltip-placement="top" tooltip="[{oxmultilang ident='IOLY_ACTIVATE_MODULE_HINT'}]" class="btn btn-primary dropdown-toggle btn-large ">
                                                                     <span class="glyphicon glyphicon-list"></span> [{oxmultilang ident='IOLY_DROPDOWN_MORE_ACTIONS'}]
                                                                 </button>
                                                                 <ul class="dropdown-menu" role="menu">
@@ -204,15 +190,22 @@
                                                             </span> &nbsp;
                                                         [{/if}]
                                                         <button tooltip-placement="top" tooltip="[{oxmultilang ident='IOLY_UNINSTALL_MODULE_HINT'}]" type="submit" ng-click="removeModule(module.packageString, key, '[{oxmultilang ident="IOLY_MODULE_UNINSTALL_SUCCESS"}]')" class="loadModuleButton  btn btn-large btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> [{oxmultilang ident="IOLY_BUTTON_REMOVE_VERSION_2"}]</button>
+                                                        <br><br>
+                                                        <span ng-show="module.installed" style="color: green;">
+                                                            <span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_INSTALLED'}] ({{key}})
+                                                        </span>
+                                                        <span ng-show="module.active" style="color: green;">
+                                                            <br><span class="glyphicon glyphicon-ok"></span>&nbsp; [{oxmultilang ident='IOLY_DETAILS_ACTIVE'}]
+                                                        </span>
                                                     </div>
                                                 </div>
                                                 <div ng:repeat="(subkey, versiondata) in version">
                                                     <div ng-switch="subkey">
                                                         <div class="moduleBoxActions" ng-switch-when="project">
-                                                            <span class="glyphicon glyphicon-info-sign"></span>&nbsp; <a href="{{versiondata}}" target="_blank">[{oxmultilang ident="IOLY_PROJECT_URL"}]</a>
+                                                            <a href="{{versiondata}}" target="_blank">[{oxmultilang ident="IOLY_PROJECT_URL"}]</a>
                                                         </div>
                                                         <div ng-switch-when="supported">
-                                                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp; [{oxmultilang ident="IOLY_OXID_VERSIONS"}]&nbsp; <span ng-class="{success: oxidversion == '[{ $oView->getShopMainVersion() }]'}" ng:repeat="oxidversion in versiondata">{{oxidversion}}<span ng-if="!$last">&nbsp;&nbsp;</span></span>
+                                                            [{oxmultilang ident='IOLY_OXID_VERSIONS'}] <span ng-class="{success: oxidversion == '[{ $oView->getShopMainVersion() }]'}" ng:repeat="oxidversion in versiondata">{{oxidversion}}<span ng-if="!$last">&nbsp;&nbsp;</span></span>
                                                         </div>
 
                                                         <!--<div ng-switch-when="mapping">
@@ -237,14 +230,19 @@
                 </tr>
                 </tbody>
             </table>
-
-
         [{/if}]
+
+        <div id="contributors" class="omcHeadline">
+            [{oxmultilang ident="IOLY_DETAILS_CONTRIBUTOR"}]
+            <ul id='contributorslist'>
+                <li ng-repeat="contributor in contributors | unique: 'login'">
+                    <a target='_blank' href='{{contributor.html_url}}'><img ng-src='{{contributor.avatar_url}}' style='border-radius: 100%; width: 20px;' alt='{{contributor.login}}' title='{{contributor.login}}' border='0'/></a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div> <!-- /magicarea -->
-
-<div class="clear"></div>
-
 <hr>
 
 <div id="iolyInfoFooter">

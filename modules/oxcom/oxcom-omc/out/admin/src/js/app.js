@@ -66,7 +66,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.updateIoly();
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg("Info", response.data.status);
+                    $scope.showMsg("Update ioly Core", response.data.status);
                 }, function (error) {
                     console.error(error);
                     $scope.addAlert('danger', error.data.message);
@@ -93,15 +93,18 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             $scope.selectedTags = [];
             $scope.priceRange = {};
             $scope.priceRange.from = 0.0;
-            $scope.priceRange.to = 10000.0;
+            $scope.priceRange.to = 5000.0;
             //Range slider config
             $scope.minRangeSlider = {
                 minValue: 0,
-                maxValue: 9999,
+                maxValue: 4999.99,
                 options: {
                     floor: 0,
-                    ceil: 10000,
+                    ceil: 5000,
                     step: 25,
+                    translate: function (value) {
+                        return value + ' €';
+                    },
                     id: 'priceslider',
                     onEnd: function(sliderId, modelValue, highValue, pointerType) {
                         console.log("END " + modelValue + " - " + highValue);
@@ -165,7 +168,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.updateRecipes();
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg("Info", response.data.status);
+                    $scope.showMsg("Update OXID Modulkatalog", response.data.status);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -181,7 +184,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.downloadModule("oxcom/oxcom-omc", "latest", '');
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg("Info", successtext);
+                    $scope.showMsg("Update OXID Modul Connector", successtext);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -211,7 +214,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.removeModule(packageString, moduleversion);
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg("Info", successtext);
+                    $scope.showMsg("Modul deinstallieren", successtext);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -252,7 +255,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                             }
                             else {
                                 // add overlay
-                                $scope.showMsg("Info", msg);
+                                $scope.showMsg("Modul-Download", msg);
                             }
                         }
                     }
@@ -273,7 +276,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         if(msg !== '') {
                             if(typeof  postInstall.type === "undefined" ||  postInstall.type === "overlay") {
                                 // default: add overlay
-                                $scope.showMsg("Info", msg);
+                                $scope.showMsg("Information", msg);
                             }
                             else {
                                 // add alert
@@ -282,7 +285,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         }
                         else {
                             // show default text only
-                            $scope.showMsg("Info", successtext);
+                            $scope.showMsg("Information", successtext);
                         }
                         // reload ng-table, too
                         $scope.refreshTable();
@@ -302,18 +305,18 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
          * Activate module
          */
         $scope.activateModule = function (activate, moduleid, moduleVersion) {
-            var headline = "Activate module";
+            var headline = "Modul aktivieren: ";
             var responsePromise = IolyService.getActiveModuleSubshops(moduleid, moduleVersion);
             responsePromise.then(function (response) {
                 var minput = "<input type='hidden' name='moduleid' id='moduleid' value='"+moduleid+"'><input type='hidden' name='moduleversion' id='moduleversion' value='"+moduleVersion+"'>";
                 var iDeact = 0;
                 if(!activate) {
                     iDeact = 1;
-                    headline = "Deactivate module";
+                    headline = "Modul deaktivieren: ";
                 }
                 minput += "<br/><input type='hidden' name='deactivate' id='deactivate' value='"+iDeact+"'></div>";
-                minput += "<div id='shopsact'><h2>Active Shop-Ids</h2>"+response.data.subshops.toString()+"</div>";
-                minput += "<div id='shops'><h2>Shop-Ids (comma-separated, e.g. '1,2,5' or 'all' for all shops)</h2><input type='text' name='shopids' id='shopids' value='all'></div>";
+                minput += "<div id='shopsact'>Für welche Shop-IDs soll das Modul aktiviert/deaktiviert werden?<br></div>"; // Verfügbare Shop-IDs: <i>"+response.data.subshops.toString()+"</i>
+                minput += "<div id='shops'><br>CE/PE: <i>all</i><br>EE (alle Subshops): <i>all</i><br>EE (bestimmte Subshops): <i>1,2,5</i><br><br><input type='text' name='shopids' id='shopids' value='all'></div>";
                 $scope.showMsg(headline + " " + moduleid, minput, $scope.submitActivateModule);
             }, function (error) {
                 console.error(error);
@@ -329,7 +332,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
 
             responsePromise.then(function (response) {
                 var shopId = $document[0].querySelector('#shopid').value;
-                $scope.showMsg("Info", response.data.status);
+                $scope.showMsg("Modulaktivierung", response.data.status);
                 // reload shop navi
                 top.oxid.admin.reloadNavigation(shopId);
                 // reload ng-table, too
@@ -343,16 +346,16 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
          * Generate views
          */
         $scope.generateViews = function () {
-            var minput = "<div id='shops'><h2>Shop-Ids (comma-separated or 'all' for all shops)</h2><input type='text' name='shopids' id='shopids' value='all'></div>";
-            $scope.showMsg("Info", minput, $scope.submitGenerateViews);
+            var minput = "<div id='shops'>Für welche Shop-IDs sollen die Views aktualisiert werden?<br><br>CE/PE: <i>all</i><br>EE (alle Subshops): <i>all</i><br>EE (bestimmte Subshops): <i>1,2,5</i><br><br><input type='text' name='shopids' id='shopids' value='all'></div>";
+            $scope.showMsg("Datenkbank-Views", minput, $scope.submitGenerateViews);
         };
         $scope.submitGenerateViews = function(content) {
             var shopIds = $document[0].querySelector('#shopids').value;
-            console.log("Generating views for shopIds: " + shopIds);
+            console.log("Views wurden für folgende Shop-IDs aktualisiert: " + shopIds);
             var responsePromise = IolyService.generateViews(shopIds);
 
             responsePromise.then(function (response) {
-                $scope.showMsg("Info", response.data.status);
+                $scope.showMsg("Datenkbank-Views", response.data.status);
             }, function (error) {
                 console.error(error);
                 $scope.addAlert('danger', error.data.message);
@@ -366,7 +369,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             var responsePromise = IolyService.emptyTmp();
 
             responsePromise.then(function (response) {
-                $scope.showMsg("Info", response.data.status);
+                $scope.showMsg("TMP-Verzeichnis", response.data.status);
             }, function (error) {
                 console.error(error);
                 $scope.addAlert('danger', error.data.message);
