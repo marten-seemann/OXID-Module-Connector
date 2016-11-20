@@ -17,7 +17,7 @@ $sMetadataVersion = '1.1';
  * OXID module connector description
  */
 $sOmcModuleDesc_de = '
-    OXID Modulkatalog mit integrieter Modulinstallation.<br>
+    OXID Modulkatalog mit integrierter Modulinstallation.<br>
     <hr style="margin-bottom: 15px;">
     <a href="https://github.com/OXIDprojects/OXID-Module-Connector" target="_blank">Github</a> &nbsp;|&nbsp; 
     <a href="https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md" target="_blank">Changelog</a> &nbsp;|&nbsp; 
