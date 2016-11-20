@@ -1,11 +1,11 @@
 # OXID module connector (en)
 
-OXID module connector (OMC) displays available modules, a short description and allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page. ([deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LIESMICH.md))
+OXID module connector (OMC) displays available modules, a short description and allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page. ([deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md))
 
 
 ## Installation
 
-1. [download OXID Modul Connector](https://github.com/OXIDprojects/OXID-Module-Connector/module/recipes.zip)
+1. [download OXID Modul Connector](https://github.com/OXIDprojects/OXID-Module-Connector/archive/module.zip)
 2. Extract module (oxcom-omc) to the /modules directory
 3. Activate module
 4. That´s it!
