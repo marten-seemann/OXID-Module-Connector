@@ -30,6 +30,7 @@ class omc_main extends oxAdminView
     protected $_allModules = null;
     protected $_allTags = array();
     protected $_currSortKey = '';
+    protected $_aModulesInDir = null;
     /**
      * Filter ioly modules for OXID
      * @var array
@@ -482,13 +483,16 @@ class omc_main extends oxAdminView
         $aSubshopsActive = array();
         $oConfig = oxRegistry::getConfig();
         $aShopIds = oxRegistry::getConfig()->getShopIds();
-        /**
-         * @var oxmodulelist $oModuleList
-         */
-        $oModuleList = oxNew('oxModuleList');
-        $sModulesDir = $oConfig->getModulesDir();
-        $aModules = $oModuleList->getModulesFromDir($sModulesDir);
-        if (in_array($moduleOxid, array_keys($aModules))) {
+        if ($this->_aModulesInDir === null) {
+            /**
+             * @var oxmodulelist $oModuleList
+             */
+            $oModuleList = oxNew('oxModuleList');
+            $sModulesDir = $oConfig->getModulesDir();
+            $this->_aModulesInDir = $oModuleList->getModulesFromDir($sModulesDir);
+
+        }
+        if (in_array($moduleOxid, array_keys($this->_aModulesInDir))) {
             foreach ($aShopIds as $sShopId) {
                 // set shopId
                 $oConfig->setShopId($sShopId);
@@ -606,6 +610,11 @@ class omc_main extends oxAdminView
      */
     public function getModuleOxid($moduleId, $moduleVersion)
     {
+        // check if there is a module id in the json file...
+        if (($moduleId = $this->_ioly->getJsonValueFromPackage($moduleId, $moduleVersion, "id")) != '' && is_array($moduleId)) {
+            return $moduleId[0];
+        }
+        // if not, read the metadata.php file to get the id ...
         $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
         if ($aFiles && is_array($aFiles)) {
             foreach (array_keys($aFiles) as $filePath) {
