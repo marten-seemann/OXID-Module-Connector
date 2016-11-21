@@ -12,6 +12,27 @@
  */
 $sMetadataVersion = '1.1';
 
+
+/**
+ * OXID module connector description
+ */
+$sOmcModuleDesc_de = '
+    OXID Modulkatalog mit integrierter Modulinstallation.<br>
+    <hr style="margin-bottom: 15px;">
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector" target="_blank">Github</a> &nbsp;|&nbsp; 
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md" target="_blank">Changelog</a> &nbsp;|&nbsp; 
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Support" target="_blank">Support</a> &nbsp;|&nbsp; 
+    Aktuellste Modulversion: &nbsp;<img src="https://oxidforge.org/omc/version.png" border="0">
+';
+$sOmcModuleDesc_en = '
+    OXID module catalog with integrated module installation.<br>
+    <hr style="margin-bottom: 15px;">
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector" target="_blank">Github</a> &nbsp;|&nbsp; 
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md" target="_blank">Changelog</a> &nbsp;|&nbsp; 
+    <a href="https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Support" target="_blank">Support</a> &nbsp;|&nbsp; 
+    Latest module version: &nbsp;<img src="https://oxidforge.org/omc/version.png" border="0">
+';
+
 /**
  * Module information
  */
@@ -19,10 +40,10 @@ $aModule = array(
     'id'          => 'oxcom-omc',
     'title'       => 'OXID Modul Connector',
     'description' => array(
-        'de' => 'Installierte OXID-Module verwalten und neue Module finden',
-        'en' => 'Manage installed OXID modules and find new ones',
+        'de' => $sOmcModuleDesc_de,
+        'en' => $sOmcModuleDesc_en,
     ),
-    'thumbnail'   => '',
+    'thumbnail'   => 'out/admin/img/omc_logo_200px.jpg',
     'version'     => '1.0.0',
     'author'      => 'OXID Community',
     'url'         => 'https://github.com/OXIDprojects/OXID-Modul-Connector',
