@@ -47,13 +47,14 @@
                     <button class="btn btn-primary" ng-click="ok()">[{oxmultilang ident="IOLY_BUTTON_OK"}]</button>
                 </div>
             </script>
-        
+
             [{* headline *}]
             <div class="row omcHeadline">
                 <div class="col-sm-10" style="padding: 0;">
                     <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}] ({{numRecipes}} [{oxmultilang ident="IOLY_RECIPES"}])</h1>
                     <div style="line-height: 1.5;">
                         [{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]
+                        [{oxmultilang ident="IOLY_VERSION_RECIPES_NOTICE"}]
                     </div>
                     <p>&nbsp;</p>
                     <b>[{oxmultilang ident='IOLY_DETAILS_FILTER'}]</b>
