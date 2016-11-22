@@ -798,6 +798,35 @@ class omc_main extends oxAdminView
 
         return $this->_sThisTemplate;
     }
-}
 
-?>
+    /**
+     * Internal helper function to modify all JSON files
+     */
+    private function writeModifiedJsonFiles()
+    {
+        // fill internal variable
+        $this->getAllModules();
+        if ($this->_allModules && is_array($this->_allModules)) {
+            foreach ($this->_allModules as $idx => $aPackage) {
+                // temp. - write JSON files with moduleid
+                while (list($key, $val) = each($aPackage['versions'])) {
+                    $firstVersion = $key;
+                    break;
+                }
+                $folderFilename = explode("/", $aPackage['packageString']);
+                $sModuleId = $this->getModuleOxid($aPackage['packageString'], $firstVersion);
+                $aPackage['moduleId'] = $sModuleId;
+                unset($aPackage['installed']);
+                unset($aPackage['_cookbook']);
+                unset($aPackage['_filename']);
+                unset($aPackage['packageString']);
+                $sModuleJson = json_encode($aPackage, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+                $sFolder = "/jsons/" . $folderFilename[0];
+                $sFile = $folderFilename[1] . ".json";
+                $baseDir = oxRegistry::getConfig()->getConfigParam('sShopDir');
+                exec("mkdir -p " . $baseDir . $sFolder);
+                file_put_contents($baseDir . $sFolder . "/" . $sFile, $sModuleJson);
+            }
+        }
+    }
+}
