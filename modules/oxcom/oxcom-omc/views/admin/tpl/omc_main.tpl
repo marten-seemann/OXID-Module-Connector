@@ -186,8 +186,10 @@
                                                                     <span class="glyphicon glyphicon-list"></span> [{oxmultilang ident='IOLY_DROPDOWN_MORE_ACTIONS'}]
                                                                 </button>
                                                                 <ul class="dropdown-menu" role="menu">
-                                                                    <li><a href="#" ng-click="activateModule(true, module.packageString, key)">[{oxmultilang ident='IOLY_ACTIVATE_MODULE'}]</a></li>
-                                                                    <li><a href="#" ng-click="activateModule(false, module.packageString, key)">[{oxmultilang ident='IOLY_DEACTIVATE_MODULE'}]</a></li>
+                                                                    <li><a href="#" ng-click="activateModule('activate', module.packageString, key)">[{oxmultilang ident='IOLY_ACTIVATE_MODULE'}]</a></li>
+                                                                    <li><a href="#" ng-click="activateModule('deactivate', module.packageString, key)">[{oxmultilang ident='IOLY_DEACTIVATE_MODULE'}]</a></li>
+                                                                    <li><a href="#" ng-click="activateModule('reactivate', module.packageString, key)">[{oxmultilang ident='IOLY_REACTIVATE_MODULE'}]</a></li>
+                                                                    <li><a href="#" ng-click="activateModule('reset', module.packageString, key)">[{oxmultilang ident='IOLY_RESET_MODULECACHE'}]</a></li>
                                                                 </ul>
                                                             </span> &nbsp;
                                                         [{/if}]

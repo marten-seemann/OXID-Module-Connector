@@ -48,7 +48,10 @@ Der OXID Modul Connector wurde primär für Entwicklungs- und Testumgebungen ent
   * JSON
   * ZIP
   
----
+  
+## Changelog
+
+siehe [Changelog-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md))
 
 
 ## License

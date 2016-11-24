@@ -50,6 +50,12 @@ This module is designed for development and testing environments. Please do not 
   * cUrl
   * JSON
   * ZIP
+  
+
+## Changelog
+
+see [CHANGELOG file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md))
+
 
 
 ## License

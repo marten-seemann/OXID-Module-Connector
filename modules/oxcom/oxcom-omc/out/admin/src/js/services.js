@@ -58,8 +58,8 @@ angular.module('main.services', [])
     getActiveModuleSubshops: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'getActiveModuleSubshopsAjax',moduleid: moduleid, moduleversion: moduleversion}});
     },
-    activateModule: function(moduleid, shopids, deactivate, moduleversion){
-        return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'activateModuleAjax', moduleid: moduleid, shopids: shopids, deactivate: deactivate, moduleversion: moduleversion}});
+    activateModule: function(moduleid, shopids, action, moduleversion){
+        return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'activateModuleAjax', moduleid: moduleid, shopids: shopids, action: action, moduleversion: moduleversion}});
     },
     generateViews: function(shopIds){
         return $http.get(gOxidSelfLink, {params: {cl:'omc_main', isajax:true, fnc:'generateViewsAjax', shopIds: shopIds}});

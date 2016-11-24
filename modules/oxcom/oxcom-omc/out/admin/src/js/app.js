@@ -304,18 +304,30 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
         /**
          * Activate module
          */
-        $scope.activateModule = function (activate, moduleid, moduleVersion) {
+        $scope.activateModule = function (action, moduleid, moduleVersion) {
             var headline = "Modul aktivieren: ";
+            var sDeact = "activate";
+            var sAction = "aktiviert";
             var responsePromise = IolyService.getActiveModuleSubshops(moduleid, moduleVersion);
             responsePromise.then(function (response) {
                 var minput = "<input type='hidden' name='moduleid' id='moduleid' value='"+moduleid+"'><input type='hidden' name='moduleversion' id='moduleversion' value='"+moduleVersion+"'>";
-                var iDeact = 0;
-                if(!activate) {
-                    iDeact = 1;
+                if(action == "deactivate") {
+                    sDeact = "deactivate";
+                    sAction = "deaktiviert";
                     headline = "Modul deaktivieren: ";
                 }
-                minput += "<br/><input type='hidden' name='deactivate' id='deactivate' value='"+iDeact+"'></div>";
-                minput += "<div id='shopsact'>Für welche Shop-IDs soll das Modul aktiviert/deaktiviert werden?<br></div>"; // Verfügbare Shop-IDs: <i>"+response.data.subshops.toString()+"</i>
+                if(action == "reactivate") {
+                    sDeact = "reactivate";
+                    sAction = "reaktiviert";
+                    headline = "Modul reaktivieren: ";
+                }
+                if(action == "reset") {
+                    sDeact = "reset";
+                    sAction = "resettet";
+                    headline = "Modulcache resetten: ";
+                }
+                minput += "<br/><input type='hidden' name='action' id='action' value='"+sDeact+"'></div>";
+                minput += "<div id='shopsact'>Für welche Shop-IDs soll das Modul "+sAction+" werden?<br></div>"; // Verfügbare Shop-IDs: <i>"+response.data.subshops.toString()+"</i>
                 minput += "<div id='shops'><br>CE/PE: <i>all</i><br>EE (alle Subshops): <i>all</i><br>EE (bestimmte Subshops): <i>1,2,5</i><br><br><input type='text' name='shopids' id='shopids' value='all'></div>";
                 $scope.showMsg(headline + " " + moduleid, minput, $scope.submitActivateModule);
             }, function (error) {
@@ -326,13 +338,13 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
         $scope.submitActivateModule = function(content) {
             var moduleId = $document[0].querySelector('#moduleid').value;
             var moduleVersion = $document[0].querySelector('#moduleversion').value;
-            var deactivate = $document[0].querySelector('#deactivate').value;
+            var action = $document[0].querySelector('#action').value;
             var shopIds = $document[0].querySelector('#shopids').value;
-            var responsePromise = IolyService.activateModule(moduleId, shopIds, deactivate, moduleVersion);
+            var responsePromise = IolyService.activateModule(moduleId, shopIds, action, moduleVersion);
 
             responsePromise.then(function (response) {
                 var shopId = $document[0].querySelector('#shopid').value;
-                $scope.showMsg("Modulaktivierung", response.data.status);
+                $scope.showMsg("Modulemanagement", response.data.status);
                 // reload shop navi
                 top.oxid.admin.reloadNavigation(shopId);
                 // reload ng-table, too

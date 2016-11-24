@@ -60,10 +60,10 @@ class omc_helper extends oxSuperCfg
      * Activate a module in one or more shops
      * @param string  $moduleId   The ID of the OXID module
      * @param string  $sShopIds
-     * @param boolean $deactivate
+     * @param boolean $sAction
      * @return array
      */
-    public function activateModule($moduleId, $sShopIds, $deactivate = false)
+    public function activateModule($moduleId, $sShopIds, $sAction = "activate")
     {
         $aShopIds = $this->getShopIdsFromString($sShopIds);
 
@@ -84,10 +84,7 @@ class omc_helper extends oxSuperCfg
         if (!in_array($moduleId, array_keys($aModules))) {
             $msg .= "Modul nicht gefunden: <b>$moduleId</b><br/>";
         } else {
-            if ($deactivate) {
-                #$msg .= "De-";
-            }
-            $msg .= "Modulaktivierung <b>$moduleId</b> für Shop-ID <i>" . implode(", ", $aShopIds) . "</i> ...<br/>";
+            $msg .= "Modulhandling <b>$moduleId</b> für Shop-ID <i>" . implode(", ", $aShopIds) . "</i> ...<br/>";
             foreach ($aShopIds as $sShopId) {
                 // set shopId
                 $oConfig->setShopId($sShopId);
@@ -99,7 +96,81 @@ class omc_helper extends oxSuperCfg
                     /**
                      * @var oxmodule $oModule
                      */
-                    if (!$deactivate) {
+                    if ($sAction == "activate") {
+                        $msg .= "Shop-ID $sShopId: Aktiviere $sModuleId ...<br/>";
+                        try {
+                            if (class_exists('oxModuleInstaller')) {
+                                /** @var oxModuleCache $oModuleCache */
+                                $oModuleCache = oxNew('oxModuleCache', $oModule);
+                                /** @var oxModuleInstaller $oModuleInstaller */
+                                $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
+
+                                if ($oModuleInstaller->activate($oModule)) {
+                                    $msg .= "$sModuleId aktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Aktivieren!<br/>";
+                                }
+                            } else {
+                                if ($oModule->activate()) {
+                                    $msg .= "$sModuleId aktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Aktivieren!<br/>";
+                                }
+                            }
+                        } catch (oxException $oEx) {
+                            $msg .= $oEx->getMessage();
+                            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+                        }
+                    } elseif($sAction == "deactivate") { // deactivate!
+                        $msg .= "Shop-ID $sShopId: Deaktiviere $sModuleId ...<br/>";
+                        try {
+                            if (class_exists('oxModuleInstaller')) {
+                                /** @var oxModuleCache $oModuleCache */
+                                $oModuleCache = oxNew('oxModuleCache', $oModule);
+                                /** @var oxModuleInstaller $oModuleInstaller */
+                                $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
+
+                                if ($oModuleInstaller->deactivate($oModule)) {
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren!<br/>";
+                                }
+                            } else {
+                                if ($oModule->deactivate()) {
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren!<br/>";
+                                }
+                            }
+                        } catch (oxException $oEx) {
+                            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+                            $msg .= $oEx->getMessage();
+                        }
+                    } elseif($sAction == "reactivate") { // reactivate!
+                        $msg .= "Shop-ID $sShopId: Deaktiviere $sModuleId ...<br/>";
+                        try {
+                            if (class_exists('oxModuleInstaller')) {
+                                /** @var oxModuleCache $oModuleCache */
+                                $oModuleCache = oxNew('oxModuleCache', $oModule);
+                                /** @var oxModuleInstaller $oModuleInstaller */
+                                $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
+
+                                if ($oModuleInstaller->deactivate($oModule)) {
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren!<br/>";
+                                }
+                            } else {
+                                if ($oModule->deactivate()) {
+                                    $msg .= "$sModuleId deaktiviert!<br/>";
+                                } else {
+                                    $msg .= "$sModuleId - Fehler beim Deaktivieren!<br/>";
+                                }
+                            }
+                        } catch (oxException $oEx) {
+                            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+                            $msg .= $oEx->getMessage();
+                        }
                         $msg .= "Shop-ID $sShopId: Aktiviere $sModuleId ...<br/>";
                         try {
                             if (class_exists('oxModuleInstaller')) {
@@ -117,37 +188,24 @@ class omc_helper extends oxSuperCfg
                                 if ($oModule->activate()) {
                                     $msg .= "$sModuleId aktiviert!<br/>";
                                 } else {
-                                    $msg .= "$sModuleId - Fehler beim Aktivieren<br/>";
+                                    $msg .= "$sModuleId - Fehler beim Aktivieren!<br/>";
                                 }
                             }
                         } catch (oxException $oEx) {
                             $msg .= $oEx->getMessage();
                             $headerStatus = "HTTP/1.1 500 Internal Server Error";
                         }
-                    } else { // deactivate!
-                        $msg .= "Shop-ID $sShopId: Deaktiviere $sModuleId ...<br/>";
+                    } elseif($sAction == "reset") { // reactivate!
                         try {
                             if (class_exists('oxModuleInstaller')) {
                                 /** @var oxModuleCache $oModuleCache */
                                 $oModuleCache = oxNew('oxModuleCache', $oModule);
-                                /** @var oxModuleInstaller $oModuleInstaller */
-                                $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
-
-                                if ($oModuleInstaller->deactivate($oModule)) {
-                                    $msg .= "$sModuleId deaktiviert!<br/>";
-                                } else {
-                                    $msg .= "$sModuleId - Fehler beim Deaktivieren<br/>";
-                                }
-                            } else {
-                                if ($oModule->deactivate()) {
-                                    $msg .= "$sModuleId deaktiviert!<br/>";
-                                } else {
-                                    $msg .= "$sModuleId - Fehler beim Deaktivieren<br/>";
-                                }
+                                $oModuleCache->resetCache();
+                                $msg .= "$sModuleId - Modulcache resettet!<br/>";
                             }
                         } catch (oxException $oEx) {
-                            $headerStatus = "HTTP/1.1 500 Internal Server Error";
                             $msg .= $oEx->getMessage();
+                            $headerStatus = "HTTP/1.1 500 Internal Server Error";
                         }
                     }
                 }

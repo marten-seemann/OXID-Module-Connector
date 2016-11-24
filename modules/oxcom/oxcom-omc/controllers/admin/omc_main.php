@@ -517,11 +517,11 @@ class omc_main extends oxAdminView
         $sShopIds = oxRegistry::getConfig()->getRequestParameter("shopids");
         $moduleId = oxRegistry::getConfig()->getRequestParameter("moduleid");
         $moduleVersion = oxRegistry::getConfig()->getRequestParameter("moduleversion");
-        $deactivate = oxRegistry::getConfig()->getRequestParameter("deactivate");
+        $sAction = oxRegistry::getConfig()->getRequestParameter("action");
         if (strpos($moduleId, "/") !== false) {
             $moduleId = $this->getModuleOxid($moduleId, $moduleVersion);
         }
-        $aRet = $helper->activateModule($moduleId, $sShopIds, $deactivate);
+        $aRet = $helper->activateModule($moduleId, $sShopIds, $sAction);
         $res = array("status" => $aRet['message']);
         $this->_returnJsonResponse($aRet['header'], $res);
     }
