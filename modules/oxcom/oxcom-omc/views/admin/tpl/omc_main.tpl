@@ -153,13 +153,13 @@
                                         <div style="color:#ccc; margin: 5px 0 5px 0;">&mdash;</div>
                                         <span>{{module.desc.[{$langabbrev}]}}</span>
                                         <div style="color:#ccc; margin: 5px 0 5px 0;">&mdash;</div>
-                                        <b>Anbieter:</b> {{module.vendor}}
+                                        <b>[{oxmultilang ident='IOLY_VENDOR'}]:</b> {{module.vendor}}
                                         &nbsp;&middot;&nbsp;
-                                        <b>Lizenz:</b> {{module.license}}
+                                        <b>[{oxmultilang ident='IOLY_LICENSE'}]:</b> {{module.license}}
                                         &nbsp;&middot;&nbsp;
-                                        <b>Preis:</b> <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}} &euro;</span>
+                                        <b>[{oxmultilang ident='IOLY_PRICE'}]:</b> <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}} &euro;</span>
                                         <br>
-                                        <b>Tags:</b> <span ng-repeat="tag in module.tags">{{tag}}<span ng-if="!$last">, </span></span>
+                                        <b>[{oxmultilang ident='IOLY_TAGS'}]:</b> <span ng-repeat="tag in module.tags">{{tag}}<span ng-if="!$last">, </span></span>
                                     </div>
                                 </div>
                                 <div class="moduleBoxContentMiddle">

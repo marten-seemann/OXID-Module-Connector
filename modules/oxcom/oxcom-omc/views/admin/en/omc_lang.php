@@ -87,5 +87,9 @@ $aLang = array(
     'IOLY_DETAILS_FILTER_TAGS'                  => 'Tags',
     'IOLY_DETAILS_INSTALLED'                    => 'Module is installed',
     'IOLY_DETAILS_NOINSTALL'                    => 'For this module, the installation is unfortunately not possible: no download link found.',
+    'IOLY_VENDOR'                               => 'Vendor',
+    'IOLY_LICENSE'                              => 'License',
+    'IOLY_PRICE'                                => 'Price',
+    'IOLY_TAGS'                                 => 'Tags',
 );
 ?>

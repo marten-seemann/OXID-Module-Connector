@@ -89,5 +89,9 @@ $aLang = array(
     'IOLY_DETAILS_INSTALLED'                    => 'Modul installiert',
     'IOLY_DETAILS_CONTRIBUTOR'                  => 'OXID Modul Connector Community',
     'IOLY_DETAILS_NOINSTALL'                    => 'Für dieses Modul ist eine Installation leider nicht möglich, da keine Download-URL hinterlegt wurde.',
+    'IOLY_VENDOR'                               => 'Anbieter',
+    'IOLY_LICENSE'                              => 'Lizenz',
+    'IOLY_PRICE'                                => 'Preis',
+    'IOLY_TAGS'                                 => 'Tags',
 );
 ?>
