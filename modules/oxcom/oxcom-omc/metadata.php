@@ -44,7 +44,7 @@ $aModule = array(
         'en' => $sOmcModuleDesc_en,
     ),
     'thumbnail'   => 'out/admin/img/omc_logo_200px.jpg',
-    'version'     => '1.0.0',
+    'version'     => '1.1.0',
     'author'      => 'OXID Community',
     'url'         => 'https://github.com/OXIDprojects/OXID-Modul-Connector',
     'extend'      => array(
