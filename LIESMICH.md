@@ -1,6 +1,6 @@
 # OXID Modul Connector
 
-Der OXID Modul Connector (OMC) stellt verfügbare Module und eine Kurzbeschreibung dar und erlaubt es, diese Module (falls möglich) automatisch und direkt aus dem OXID eShop Adminbereich heraus zu installieren. Falls die automatische Installation aus irgendeinem Grund nicht möglich ist, verlinkt OMC direkt auf die originale Modulseite. ([English version](https://github.com/OXIDprojects/OXID-Module-Connector/wiki))
+Der OXID Modul Connector (OMC) stellt verfügbare Module und eine Kurzbeschreibung dar und erlaubt es, diese Module (falls möglich) automatisch und direkt aus dem OXID eShop Adminbereich heraus zu installieren. Falls die automatische Installation aus irgendeinem Grund nicht möglich ist, verlinkt OMC direkt auf die originale Modulseite. ([English version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/README.md))
 
 ![](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/screenshot_omc.png)
 
@@ -21,7 +21,8 @@ Es ist sehr simpel, das eigene Modul im OMC zu listen: Schickt uns einfach einen
 
 ## Changelog
 
-Schaut bitte in die [CHANGELOG-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md)).
+Schaut bitte in die [CHANGELOG-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md).
 
 ## Lizenz
-Der OXID Modul Connector ist unter MIT lizenziert. Mehr Details findet Ihr in der [Lizenz-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE).
+Der OXID Modul Connector ist unter MIT lizenziert.
+Mehr Details findet Ihr in der [Lizenz-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE).
