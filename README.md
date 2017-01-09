@@ -17,7 +17,7 @@ Please note that this is a community project which comes with absolutely no warr
 
 ## Contribute modules
 
-Getting your own module is quite easy: simply send us a pull request with a recipe for your module. Here's how to [create a recipe](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Contributing).
+Getting your own module into OMC is quite easy: simply send us a pull request with a recipe for your module. Here's how to [create a recipe](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Contributing).
 
 
 ## Changelog
