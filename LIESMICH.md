@@ -1,58 +1,27 @@
-# OXID Modul Connector (de)
+# OXID Modul Connector
 
-Der OXID Modul Connector (OMC) ist ein Modulkatalog für verfügbare OXID Module. Man hat direkt aus dem Shop-Admin die Möglichkeit Module zu installieren, sofern vom Modulanbieter unterstützt. Sollte dies nicht möglich sein ist ein Link zur Modulseite des Anbieters vorhanden.  ([english version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/README.md))
+Der OXID Modul Connector (OMC) stellt verfügbare Module und eine Kurzbeschreibung dar und erlaubt es, diese Module (falls möglich) automatisch und direkt aus dem OXID eShop Adminbereich heraus zu installieren. Falls die automatische Installation aus irgendeinem Grund nicht möglich ist, verlinkt OMC direkt auf die originale Modulseite. ([English version](https://github.com/OXIDprojects/OXID-Module-Connector/wiki))
 
+![](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/screenshot_omc.png)
 
 ## Installation
 
-1. [OXID Modul Connector herunterladen](https://github.com/OXIDprojects/OXID-Module-Connector/archive/module.zip)
-2. Modul (oxcom-omc) ist das /modules Verzeichnis kopieren
-3. Modul aktivieren
-4. That´s it!
+Die Installation des OMC ist genauso einfach wie die jedes anderen OXID eShop Moduls. Bitte nehmt die [Systemvoraussetzungen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Systemvoraussetzungen) für dieses Projekt zur Kenntnis und lest die detaillierte [Installationsanleitung](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation-(DE)) in unserer Wiki für mehr Informationen. 
 
-Installation mit Composer oder per Konsole? Kein Problem! ;-) [Mehr lesen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
+## Disclaimer
 
+Bitte beachtet, dass es sich um ein Community-Projekt handelt, für das es keinerlei Garantie auf Komplettheit oder Richtigkeit der Inhalte gibt. Wenn Ihr das Projekt gut findet, freuen wir uns über das Einreichen weiterer Module oder auch gern über Euren Beitrag zur Weiterentwicklung.
 
-## Nutzung
+> ACHTUNG! <br>
+> Dieses Modul wurde für Entwicklungs- und Testzwecke gebaut.<br>Bitte installiert keine Module in Eurer Live-Umgebung!<br>Bitte sichert Eure Installation (Datenbank und Dateien), before Ihr Module über den OXID Modul Connector installiert!
 
-- In der Shop-Admin-Navigation im Bereich Erweiterungen gibt es einen neuen Punkt Connector.
-- Beim ersten Öffnen des Connectors werden automatisch alle benötigen Daten (ioly Core, aktueller Modulkatalog) heruntergeladen.
-- Sobald die Modulliste angezeigt wird kann mit nur einem Klick ein Modul installiert/aktiviert werden.
-- Sollte ein Modul nicht als Download zur Verfügung stehen gibt es einen direkten Link zur Modulseite des Anbieters.
+## Dein Modul im OMC
 
-![OXID Modul Connector](screenshot_omc.png)
+Es ist sehr simpel, das eigene Modul im OMC zu listen: Schickt uns einfach einen Pull-Request mit dem Rezept für Euer Modul. Hier steht, wie man ein solches [Rezept erstellen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Dein-Modul-im-OMC) kann.
 
-## Allgemeine Hinweise
-
-Der OXID Modul Connector basiert auf [ioly](https://github.com/ioly/) und ist während des OXID Hackathons ([#oxhackathon16](https://openspacer.org/12-oxid-community/136-oxid-hackathon-nuernberg-2016/)) entstanden. Das OXIDforge Team kümmert sich so gut wie möglich um die Verwaltung der Module. Jeder der möchte ist natürlich gerne eingeladen am Modulkatalog mitzuarbeiten. Der OXID Modul Connector ist ein Community Projekt welches keine Gewährleistung und Anspruch auf Vollständigkeit sowie Richtigkeit der Daten übernimmt.
-
->**ACHTUNG!**
-Der OXID Modul Connector wurde primär für Entwicklungs- und Testumgebungen entwickelt. Vor der Nutzung unbedingt ein Backup (Dateien + Datenbank) anfertigen bevor das erste Modul installiert wird.
-
-
-## Module einreichen
-
-1. Modulrezept schreiben
-2. Rezept auf Github committen
-3. Pull-Request senden
-4. Fertig, jeder kann das Modul nutzen!
-
-[Mehr lesen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Contributing)
-
-
-## Anforderungen
-
-- PHP 5.4.0 oder höher
-- PHP extensions:
-  * cUrl
-  * JSON
-  * ZIP
-  
-  
 ## Changelog
 
-siehe [Changelog-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md))
+Schaut bitte in die [CHANGELOG-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md)).
 
-
-## License
-Der OXID Modul Connector ist unter der MIT Lizenz lizensiert - für mehr Informationen siehe [Lizenz-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE).
+## Lizenz
+Der OXID Modul Connector ist unter MIT lizenziert. Mehr Details findet Ihr in der [Lizenz-Datei](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE).
