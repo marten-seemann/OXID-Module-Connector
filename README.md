@@ -1,6 +1,6 @@
 # OXID Module Connector
 
-OXID Module Connector (OMC) displays available modules and a short description, and it allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page. ([Deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/%C3%9Cber-das-Projekt))
+OXID Module Connector (OMC) displays available modules and a short description, and it allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page. ([Deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md))
 
 ![](https://raw.githubusercontent.com/wiki/OXIDprojects/OXID-Module-Connector/Selection_037.png)
 
@@ -22,7 +22,8 @@ Getting your own module into OMC is quite easy: simply send us a pull request wi
 
 ## Changelog
 
-Please see the [CHANGELOG file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md)).
+Please see the [CHANGELOG file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/CHANGELOG.md).
 
 ## License
-OXID Module Connector is licensed under MIT License. See the [LICENSE file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE) for more details.
+OXID Module Connector is licensed under MIT License.
+See the [LICENSE file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE) for more details.
