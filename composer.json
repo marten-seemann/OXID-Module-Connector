@@ -1,0 +1,10 @@
+{
+  "name": "oxidprojects/oxid-module-connector",
+  "type":"library",
+  "description": "OXID Module Connector Module",
+  "keywords":["OXID", "modules", "ioly", "connector"],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.3"
+  }
+}
