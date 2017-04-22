@@ -1,0 +1,32 @@
+{
+    "name": "Hersteller Beschreibungen",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Mit OXID haben Sie die Möglichkeit, Ihre Artikel einem bestimmten Hersteller zuordnen zu können. "
+    },
+    "tags": [
+        "product presentation",
+        "seo"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Kostenlose/Hersteller-Beschreibungen.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

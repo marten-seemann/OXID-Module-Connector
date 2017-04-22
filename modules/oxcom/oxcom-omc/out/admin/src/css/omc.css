@@ -1,0 +1,228 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.2;
+}
+
+.spinner {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1234;
+    overflow: auto;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}   
+.downloadprogress {
+    position: fixed;
+    top: 90px;
+    left: 350px;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1235;
+    overflow: auto;
+    width: 500px; /* width of the spinner gif */
+    height: 150px; /*hight of the spinner gif +2px to fix IE8 issue */
+}   
+#magicarea {
+    padding: 20px 20px 10px 20px;
+}
+#iolyintrotext {
+    padding-bottom: 10px;
+}
+#iolyNgTable {
+    margin-top: 10px;
+}
+#iolyInfoFooter {
+    padding-left: 10px;
+    font-size: 11px;
+}
+.iolydownloadtd {
+    width: 500px;
+}
+ul.iolylist {
+    list-style-type: none !important;
+}
+ul.iolylist li, ul.pagination li, ul.dropdown-menu li{
+    background: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.pagination {
+	margin:0!important;
+}
+
+.iolydatakey {
+    font-style: italic;
+}
+span.success {
+    color: #4FA44F;
+    font-weight: bold;
+}
+/* ng-table fixes */
+tbody>tr>td.iolynoline {
+    border: none;
+}
+.ng-table th.sortable, .table thead:first-child tr:first-child th {
+    background-color: #fff;
+    margin-bottom: 5px;
+    border: none;
+    box-shadow: none;
+}
+.ng-table th {
+    text-align: left;
+}
+/* overlay placement bugfix */
+.ovh {
+    overflow:hidden;
+    margin-right: 0px !important;
+}
+
+.buttonwidth {
+	width: 260px!important;
+}
+
+#contributorslist li {
+	display: inline;
+    background: none;
+    padding: 0 10px 0 0;
+}
+
+#contributors {
+    margin-top: 30px;
+}
+
+#contributorslist {
+    padding-top: 10px;
+	list-style-type: none;
+}
+#recipeCounter {
+	text-align: center;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0;
+}
+
+h3 {
+	font-size: 15px;
+	color: red;
+    margin: 0;
+}
+
+.clear {
+    height: 10px;
+    clear: both;
+}
+div.tags input {
+    border: none;
+}
+.tag-template {
+    cursor: pointer; cursor: hand;
+}
+.tag-template .active {
+}
+.tag-template span.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
+    border: none;
+}
+
+.moduleBox {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.moduleBoxHeaderInstalled {
+    border-top: 3px solid #4FA44F;
+    border-radius-: 5px;
+}
+
+.moduleBoxHeader {
+    border-top: 3px solid #ff3600;
+    border-radius-: 5px;
+}
+
+.moduleBoxContent {
+    padding: 15px;
+    width: 100%;
+}
+
+.moduleBoxContentLeft {
+    float: left;
+    width: 55%;
+}
+.moduleBoxContentMiddle {
+    float: left;
+    width: 15%;
+}
+.moduleBoxContentRight {
+    float: right;
+    text-align: center;
+    width: 30%;
+}
+.moduleBoxActions {
+    margin-bottom: 8px;
+}
+.moduleBoxDesc {
+    margin-right: 30px;
+    line-height: 1.5;
+}
+.moduleBoxInfos {
+    line-height: 2;
+}
+
+.ng-table-pager, .omcHeadline {
+    margin: 0 25px 0 9px;
+}
+
+#filter {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px 0 10px;
+}
+
+.ng-table th.sortable, .table thead:first-child tr:first-child th {
+    padding: 10px;
+    margin: 0;
+}
+
+.input-group-sm tags-input .tags .tag-item, tags-input.ti-input-sm .tags .tag-item {
+    height: auto;
+    padding: 5px 10px 5px 10px;
+    line-height: 1;
+    margin: 5px;
+}
+
+.input-group-sm tags-input .tags .input, tags-input.ti-input-sm .tags .input {
+    display: none;
+}
+
+.tags {
+    border: 0!important;
+}
+
+.tag-template span.active {
+    text-decoration: none;
+    color: #ffcc00;
+}
+
+.picture {
+    max-width: 100px;
+    max-height: 150px;
+}

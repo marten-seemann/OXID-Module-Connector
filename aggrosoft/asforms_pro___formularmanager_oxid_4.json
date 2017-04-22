@@ -1,0 +1,36 @@
+{
+    "name": "ASForms Pro - Formularmanager Oxid 4",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-formular-manager.png",
+    "price": "99.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Create any forms for your clients at OXID eShop admin panel. The information might be sent to any e-mail addresses.",
+        "de": "Legen Sie beliebige Eingabeformulare für Ihre Kunden direkt im OXID eShop Administrationsbereich an, die Informationen werden an beliebige E-Mail Empfänger verteilt."
+    },
+    "tags": [
+        "frontend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/asforms-pro-formularmanager-oxid-eshop/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

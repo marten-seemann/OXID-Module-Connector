@@ -1,0 +1,6 @@
+<?php
+/**
+ * 
+ * Description of vendormetadata
+ */
+?>
