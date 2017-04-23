@@ -1,0 +1,35 @@
+{
+    "name": "filter4oxid",
+    "vendor": "best_it",
+	"id": "filter4oxid",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/filter4oxid_logo.png",
+    "price": "790.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Jankowfsky´s Filter4OXID is the perfect enhancement for your OXID eShop: it allows your customer to filter the results of a category by the given attributes.",
+        "de": "Filter4OXID ist die perfekte Ergänzung zu Ihrem OXID eShop: Ihre Kunden haben hiermit die Möglichkeit das für sie passende Produkt zu finden."
+    },
+    "tags": [
+        "frontend",
+        "product presentation",
+        "search"
+    ],
+    "versions": {
+      "1.3.0.6": {
+        "project": "https://exchange.oxid-esales.com/de/en/Frontend-und-User-Experience/Suche-Navigation-und-Filter/Filter4OXID-1-3-0-6-Stable-PE-4-6-x-4-7-x.html",
+        "supported": [
+          "4.7",
+          "4.6"
+        ],
+
+      },
+        "1.3.0.5": {
+            "project": "https://exchange.oxid-esales.com/de/en/Frontend-und-User-Experience/Suche-Navigation-und-Filter/Filter4OXID-1-3-0-6-Stable-PE-4-6-x-4-7-x.html",
+            "supported": [
+                "4.6"
+            ]
+
+        }
+    }
+}
