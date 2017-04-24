@@ -1,0 +1,35 @@
+{
+    "name": "Oxid Calculator - Flächen und Volumenrechner",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-calculator-500x667.png",
+    "price": "236.81",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "With this area and volume calculation tool based on simple formulas, it is possible to let customers purchase made-to-measure products.",
+        "de": "Mit dem Flächen- und Volumenberechnungs-Tool ist es mit einfachen Formeln möglich, den Kunden Produkte nach Maß einkaufen zu lassen."
+    },
+    "tags": [
+        "calculation",
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/oxid-calculator-flaechen-und-volumenrechner/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
