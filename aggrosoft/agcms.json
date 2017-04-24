@@ -1,0 +1,33 @@
+{
+    "name": "AGCMS",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-agcms.png",
+    "price": "117.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Simply integrate CMS content via Drag & Drop ",
+        "de": "Erstellen Sie CMS Inhalte einfach der Drag Drop."
+    },
+    "tags": [
+        "admin tools",
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/AGCMS.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

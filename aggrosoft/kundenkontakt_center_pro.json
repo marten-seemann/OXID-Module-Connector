@@ -1,0 +1,35 @@
+{
+    "name": "Kundenkontakt Center Pro",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-customer-contact-pro-500x667.png",
+    "price": "82.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Common issues: write a seperate e-mail to your client, about payment, special hints or clarifying a special request.",
+        "de": "Jeder kennt die Problematik, es kommt immer wieder vor dass es nötig ist Kunden eine separate E-Mail zu schreiben - von Zahlungseingängen über spezielle Hinweise oder einfach um eine Anfrage zu klären."
+    },
+    "tags": [
+        "admin tools"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/kundenkontakt-center-pro/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
