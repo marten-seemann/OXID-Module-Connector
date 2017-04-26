@@ -14,7 +14,7 @@
         "interfaces"
     ],
     "versions": {
-        "": {
+        "latest": {
             "project": "http://shop.fatchip.de/Tradebyte-2-OXID-Connector.html",
             "url": "",
             "supported": [
