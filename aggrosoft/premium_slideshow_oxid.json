@@ -1,0 +1,36 @@
+{
+    "name": "Premium Slideshow OXID",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-slideshow.png",
+    "price": "49.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "With OXID slide show module, you get the possibility to display diverse picture and product slide shows in your Online store.",
+        "de": "Mit dem OXID Slideshow-Modul haben Sie die Möglichkeit, verschiedenste Bild und Artikel Slideshows in Ihrem Shop anzuzeigen."
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/premium-slideshow-oxid/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "OXID Ipayment Connector ",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "",
+    "price": "449.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "",
+        "de": "Dieses von der OXID eSales AG zertifizierte Modul liefert die Anbindung Ihres OXID-Shops an das Online-Bezahlsystem Ipayment der 1&1 Internet AG."
+    },
+    "tags": [
+        ""
+    ],
+    "versions": {
+        "": {
+            "project": "http://shop.fatchip.de/OXID-Ipayment-Connector.html",
+            "url": "",
+            "supported": [
+                ""
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

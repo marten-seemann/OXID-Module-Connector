@@ -1,0 +1,36 @@
+{
+    "name": "Bulk Edit Massenbearbeitung von Artikeln",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-bulk-edit.png",
+    "price": "69.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Often it is neccessary to bulk edit product items.",
+        "de": "Oftmals kommt es vor dass in Ihrem Webshop eine massenhafte Bearbeitung der Artikel notwendig ist. "
+    },
+    "tags": [
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/bulk-edit-massenbearbeitung-von-artikeln/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
