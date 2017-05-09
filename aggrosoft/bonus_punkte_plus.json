@@ -1,0 +1,32 @@
+{
+    "name": "Bonus Punkte Plus",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-bonuspunkte.png",
+    "price": "79.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "With this module, your client can use bonus points to redeem them during the checkout process. You may define the value of these points.",
+        "de": "Mit dem Bonus Punkte Plus Modul kann Ihr Kunde sofort seine Punkte dazu Nutzen um diese im Warenkorb zu verrechnen, Sie selbst legen den Geldwert eines Punkts fest."
+    },
+    "tags": [
+        "marketing"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/bonus-punkte-plus/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

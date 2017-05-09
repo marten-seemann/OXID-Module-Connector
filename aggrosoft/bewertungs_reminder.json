@@ -1,0 +1,36 @@
+{
+    "name": "Bewertungs Reminder",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-bewertungs-reminder.png",
+    "price": "29.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "This reminder module sends an e-mail to the client after a configurable time past delivery",
+        "de": "Das Reminder Modul schickt nach einstellbaren x Tagen nach Versendung der Ware eine E-Mail"
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "customer management"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/bewertungs-reminder/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

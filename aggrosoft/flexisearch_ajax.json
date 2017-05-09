@@ -1,0 +1,37 @@
+{
+    "name": "Flexisearch Ajax",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-flexisearch.png",
+    "price": "49.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "A compact and quick phonetical search without any Flash",
+        "de": "Eine kompakte und schnelle phonetische Suche die ohne Flash auskommt"
+    },
+    "tags": [
+        "frontend",
+        "search"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/flexisearch-ajax/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

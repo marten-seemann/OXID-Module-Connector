@@ -1,0 +1,34 @@
+{
+    "name": "DHL Geschäftskundenportal / Intraship",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-intraship.png",
+    "price": "199.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Integrate DHL Intraship services directly into your OXID eShop installation",
+        "de": "Mit dem Intraship Modul für OXID eShop integrieren sie die DHL Intraship Services direkt in Ihren Webshop"
+    },
+    "tags": [
+        "interfaces",
+        "logistics"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/dhl-geschaeftskundenportal-intraship/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
