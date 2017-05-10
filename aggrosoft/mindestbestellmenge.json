@@ -1,0 +1,35 @@
+{
+    "name": "Mindestbestellmenge",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-minamount.png",
+    "price": "29.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "With this module, it is possible to define a minimum order quantity per product",
+        "de": "Mit diesem Modul ist es möglich für einzelne Artikel eine Mindestbestellmenge festzulegen."
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/module/mindestbestellmenge/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
