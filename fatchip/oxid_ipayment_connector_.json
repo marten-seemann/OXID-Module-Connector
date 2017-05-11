@@ -11,7 +11,7 @@
         "de": "Dieses von der OXID eSales AG zertifizierte Modul liefert die Anbindung Ihres OXID-Shops an das Online-Bezahlsystem Ipayment der 1&1 Internet AG."
     },
     "tags": [
-        ""
+        "payment"
     ],
     "versions": {
         "": {
