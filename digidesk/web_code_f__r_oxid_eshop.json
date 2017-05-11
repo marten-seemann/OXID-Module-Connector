@@ -1,0 +1,30 @@
+{
+    "name": "Web Code für OXID eShop",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_web_code_webicon_250x250.png",
+    "price": "296.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Simple web codes for products items in your Online store",
+        "de": "Vereinfachte Web-Codes für die Artikel im Online-Shop"
+    },
+    "tags": [
+        "logistics",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/web-code-oxid-eshop/",
+            "url": "",
+            "supported": [
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

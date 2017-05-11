@@ -1,0 +1,38 @@
+{
+    "name": "Shop Lexikon",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_lexikon_webicon_250x250.png",
+    "price": "593.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "dictionary for your online store",
+        "de": "Das Lexikon für Ihren Webshop."
+    },
+    "tags": [
+        "SEO",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/shop-lexikon/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
