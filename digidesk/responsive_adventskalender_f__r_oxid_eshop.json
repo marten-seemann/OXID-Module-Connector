@@ -1,0 +1,38 @@
+{
+    "name": "Responsive Adventskalender für OXID Eshop",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_adventskalender_webicon_250x250.png",
+    "price": "153.51",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "The advent calendar - every day another window with attractive offers",
+        "de": "Alle Jahre wieder: Der digidesk – Adventskalender. Jeden Tag ein neues Türchen mit attraktiven Angeboten."
+    },
+    "tags": [
+        "content",
+        "frontend",
+        "marketing"
+    ],
+    "versions": {
+        "2.0": {
+            "project": "http://www.digidesk.de/produkte/oxid-responsive-adventskalender/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
