@@ -1,0 +1,38 @@
+{
+    "name": "Produkt-Export",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2014/12/dd_export_webicon_250x250.png",
+    "price": "355.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Simply generate product export files",
+        "de": "Ganz einfach Produktexport-Dateien erstellen."
+    },
+    "tags": [
+        "interfaces"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/produkt-export/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

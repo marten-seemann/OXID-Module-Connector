@@ -1,0 +1,31 @@
+{
+    "name": "Produkt2PDF",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_product2pdf_250x250.png",
+    "price": "177.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "This module generates a product sheet as PDF from entered information: product name, description, image, price, etc. ",
+        "de": "Das Modul erstellt aus dem gegebenen Informationen (Produktname, Text, Bild, Preis, UVP) ein Produktdatenblatt."
+    },
+    "tags": [
+        "content",
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/produkt2pdf/",
+            "url": "",
+            "supported": [
+                ""
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
