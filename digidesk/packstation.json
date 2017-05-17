@@ -1,0 +1,37 @@
+{
+    "name": "Packstation",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_packstation_webicon_250x250.png",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Offers the possibility to send the shipment to a container freight station or to a post office.",
+        "de": "Bietet Kunden die Möglichkeit, die bestellte Ware zu einer Packstation oder Postfiliale zu schicken."
+    },
+    "tags": [
+        "checkout",
+        "logistics"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/packstation/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

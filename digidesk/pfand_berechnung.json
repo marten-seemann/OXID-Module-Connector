@@ -1,0 +1,32 @@
+{
+    "name": "Pfand Berechnung",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2014/12/dd_pfandberechnung_250x250.png",
+    "price": "58.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Automatically assign a deposit product items",
+        "de": "Modul zur automatischen Pfandermittlung bei entsprechenden Artikeln"
+    },
+    "tags": [
+        "calculation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/pfand-berechnung/",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
