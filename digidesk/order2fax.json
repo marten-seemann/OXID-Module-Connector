@@ -11,7 +11,6 @@
         "de": "Das Modul „Order2Fax“ ermöglicht es, Artikel im Warenkorb als PDF auszugeben, welches man sich dann als FAX zusenden lassen kann."
     },
     "tags": [
-        "",
         "checkout",
         "frontend"
     ],
