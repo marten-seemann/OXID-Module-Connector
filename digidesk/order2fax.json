@@ -1,0 +1,34 @@
+{
+    "name": "Order2Fax",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_order2fax_webicon_250x250.png",
+    "price": "177.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Order2Fax makes it possible to print product items in cart into a PDF and fax it",
+        "de": "Das Modul „Order2Fax“ ermöglicht es, Artikel im Warenkorb als PDF auszugeben, welches man sich dann als FAX zusenden lassen kann."
+    },
+    "tags": [
+        "",
+        "checkout",
+        "frontend"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/order2fax/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
