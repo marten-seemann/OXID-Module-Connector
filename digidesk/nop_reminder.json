@@ -1,0 +1,34 @@
+{
+    "name": "NOP Reminder",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_nop_reminder_webicon_250x250.png",
+    "price": "296.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "If a product item is sold out, customers can get informed if the product is available again.",
+        "de": "Wenn Artikel ausverkauft sind, können sich Kunden für diese Artikel vormerken lassen, um dann benachrichtigt zu werden, wenn der Artikel wieder verfügbar ist."
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/nop-reminder/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
