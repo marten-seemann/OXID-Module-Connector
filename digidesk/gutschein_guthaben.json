@@ -1,0 +1,39 @@
+{
+    "name": "Gutschein Guthaben",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_gurtschein_guthaben_webicon_250x250.png",
+    "price": "177.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Vouchers can be partially redeemed.",
+        "de": "Mit dem Modul Gutschein Guthaben können Kunden Gutscheine in Teilbeträgen einlösen. "
+    },
+    "tags": [
+        "calculation",
+        "checkout",
+        "customer management",
+        "marketing"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/gutschein-guthaben/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

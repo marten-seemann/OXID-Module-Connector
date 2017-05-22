@@ -1,0 +1,32 @@
+{
+    "name": "Fast Order",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_fastorder_webicon_250x250.png",
+    "price": "177.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Quick-order by product number",
+        "de": "Modul für eine Schnellbestellung, wenn dem Kunden die Artikelnummern bekannt sein sollten."
+    },
+    "tags": [
+        "frontend"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/fast-order/",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.1",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

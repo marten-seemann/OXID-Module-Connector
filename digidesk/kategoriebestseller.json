@@ -1,0 +1,33 @@
+{
+    "name": "Kategoriebestseller",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_katbesteller_webicon_250x250.png",
+    "price": "58.31",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Shows most sold product items per category",
+        "de": "Das Oxid eShop Modul „Kategoriebestseller“ macht es endlich möglich, dem Kunden die best verkauften Produkte der jeweils aktiven Kategorie anzuzeigen."
+    },
+    "tags": [
+        "content",
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.digidesk.de/produkte/kategoriebestseller/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "4.9"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
