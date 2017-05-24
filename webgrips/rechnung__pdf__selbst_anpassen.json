@@ -1,0 +1,32 @@
+{
+    "name": "Rechnung (PDF) selbst anpassen",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Easily adapt different text areas of the PDF invoice. ",
+        "de": "Mit diesem Modul können Sie verschiedene Textbereiche im Rechnungs-PDF selbst bearbeiten."
+    },
+    "tags": [
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Rechnung-PDF-selbst-anpassen.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
