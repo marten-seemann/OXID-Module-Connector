@@ -1,0 +1,31 @@
+{
+    "name": "Individuelle Nummern",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Generate individual numbers for orders, customers an invoices",
+        "de": "Definieren Sie individuelle Nummern für Bestellungen, Kunden und Rechnungen."
+    },
+    "tags": [
+        "frontend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Individuelle-Nummern.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
