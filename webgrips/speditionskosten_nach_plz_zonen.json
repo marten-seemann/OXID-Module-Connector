@@ -1,0 +1,31 @@
+{
+    "name": "Speditionskosten nach PLZ-Zonen",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "232.05",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Define shipping zones according to postal code with individual shipping rules and fees in your OXID eShop.",
+        "de": "Mit diesem Modul können Sie in Ihrem OXID eShop beliebig viele Versandkosten-Zonen nach Postleitzahl mit individuellen Versand-Regeln und Gebühren festlegen."
+    },
+    "tags": [
+        "logistics"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Speditionskosten-nach-PLZ-Zonen.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

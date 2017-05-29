@@ -1,0 +1,31 @@
+{
+    "name": "UPS-Tracking in Bestellübersicht",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "29.75",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Activate tracking for shipments with UPS",
+        "de": "Aktivieren Sie mit diesem Modul das Tracking für Sendungen per UPS."
+    },
+    "tags": [
+        "logistics"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/UPS-Tracking-in-Bestelluebersicht.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Kategorien für Kundengruppen",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "446.25",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Assign customer groups to categories and let them see or purchase only these product items.",
+        "de": "Mit diesem Modul können Sie für alle Kategorien festlegen, welche Kundengruppen diese sehen dürfen bzw. Artikel daraus kaufen (und Preise sehen) dürfen."
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Kategorien-fuer-Kundengruppen.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

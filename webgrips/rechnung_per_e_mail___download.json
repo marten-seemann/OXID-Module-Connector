@@ -1,0 +1,35 @@
+{
+    "name": "Rechnung per E-Mail + Download",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "46.41",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Send e-mails with a click from admin panel or automatically with order or shipping confirmation to your client. Allow downloading invoice documents from the customer area.",
+        "de": "Versenden Sie E-Mails per Knopfdruck aus dem Shop-Backend oder automatisch mit Bestell- oder Versandbestätigung an Ihre Kunden - oder/und erlauben Sie Ihren Kunden den Download ihrer Rechnungen aus dem Kundenkonto heraus."
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "customer management",
+        "legal",
+        "payment"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Rechnung-per-E-Mail-Download.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
