@@ -1,0 +1,32 @@
+{
+    "name": "Produkt-Anfrage Formular",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "70.21",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Display a request form at the product detail page.",
+        "de": "Mit diesem OXID Modul wird ein Anfrageformular auf der Artikel-Detailseite eingebunden. "
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/vollere-Warenkoerbe/Produkt-Anfrage-Formular.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

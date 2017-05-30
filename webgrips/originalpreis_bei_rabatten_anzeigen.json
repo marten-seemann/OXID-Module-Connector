@@ -1,0 +1,32 @@
+{
+    "name": "Originalpreis bei Rabatten anzeigen",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "113.05",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Display the original price of a product item in case of discounts.",
+        "de": "Mit diesem Modul wird der Originalpreis des Produkts bei rabattierten Preisen zusätzlich durchgestrichen mit angezeigt. "
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/vollere-Warenkoerbe/Originalpreis-bei-Rabatten-anzeigen.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Erweiterte Attributpflege",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "113.05",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Define values and sort of selection (e.g. multiple) for each attribute in order to streamline the attribute maintenance",
+        "de": "Für jedes Attribut vorab die gültigen Werte sowie die Art der Auswahl (z. B. Mehrfachauswahl) festlegen. Damit wird das Pflegen der Attribute nicht nur sicherer, sondern geht auch noch viel schneller."
+    },
+    "tags": [
+        "",
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Zeit-Geld-Nerven/Erweiterte-Attributpflege.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
