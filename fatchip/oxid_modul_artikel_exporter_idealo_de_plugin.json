@@ -1,0 +1,38 @@
+{
+    "name": "OXID Modul Artikel Exporter Idealo.de Plugin",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_artikel_exporter_idealo_de_produktbox_750px.jpg",
+    "price": "19.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Simply generate an export file for Idealo.de",
+        "de": "Erstellen Sie einfach und unkompliziert eine Export-Datei für Idealo.de"
+    },
+    "tags": [
+        "interfaces",
+        "marketing"
+    ],
+    "versions": {
+        "1.1.1": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Artikel-Exporter-Idealo-de.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

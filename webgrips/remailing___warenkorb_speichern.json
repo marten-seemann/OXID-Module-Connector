@@ -1,0 +1,30 @@
+{
+    "name": "ReMailing + Warenkorb speichern",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "213.01",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Save cart, get back abendonned carts, inform as soon as a product item can be delivered again, newsletter opt-in reminder, suggest rating x days after order.",
+        "de": "Warenkorb speichern, Kaufabbrecher zurückholen, Info, sobald ein Artikel wieder lieferbar ist, Newsletter Opt-In Erinnerung, Einladung zur Produktbewertung x Tage nach Bestellung."
+    },
+    "tags": [
+        "marketing"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/vollere-Warenkoerbe/ReMailing-Warenkorb-speichern.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

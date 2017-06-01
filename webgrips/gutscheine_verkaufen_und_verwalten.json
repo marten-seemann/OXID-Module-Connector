@@ -1,0 +1,34 @@
+{
+    "name": "Gutscheine verkaufen und verwalten",
+    "vendor": "webgrips",
+    "type": "oxid",
+    "picture": "",
+    "price": "470.05",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Increase your turnover with selling coupons and managing them.",
+        "de": "Mit diesem Modul steigern Sie Ihren Umsatz durch den Verkauf von Gutscheinen und erweitern die Gutschein-Verwaltung Ihres OXID eShops."
+    },
+    "tags": [
+        "marketing"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.web-grips.de/shop/OXID-eShop/OXID-Module/Sichtbarer-werden/Gutscheine-verkaufen-verwalten.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
