@@ -9,7 +9,6 @@
         "en": "The OXID Module Connector Backend. You should not uninstall this :)"
     },
     "tags": [
-        "ioly",
         "backend"
     ],
     "versions": {
