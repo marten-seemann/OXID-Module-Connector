@@ -1,0 +1,39 @@
+{
+    "name": "OXID Modul Betreiber-Statistiken",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_betreiber_stats_produktbox_750px.jpg",
+    "price": "355.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Get any reportings easy and clearly via OXID admin panel.",
+        "de": "Werten Sie CEO Statistiken bequem und übersichtlich im OXID Admin Bereich aus."
+    },
+    "tags": [
+        "admin tools",
+        "analytics",
+        "backend"
+    ],
+    "versions": {
+        "1.7.11": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Betreiber-Statistiken.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

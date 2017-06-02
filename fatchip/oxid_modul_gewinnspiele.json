@@ -1,0 +1,37 @@
+{
+    "name": "OXID Modul Gewinnspiele",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_gewinnspiele_produktbox_750px.jpg",
+    "price": "1426.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Generate any competition or tombola games and collect relevant addresses.",
+        "de": "Erstellen Sie beliebige Gewinnspiele und Verlosungen und sammeln Sie relevante Adressen."
+    },
+    "tags": [
+        "marketing"
+    ],
+    "versions": {
+        "1.4.6": {
+            "project": "http://shop.fatchip.de/OXID-Modul-Gewinnspiele.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

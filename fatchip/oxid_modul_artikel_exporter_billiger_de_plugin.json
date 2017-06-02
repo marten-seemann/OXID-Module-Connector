@@ -1,0 +1,38 @@
+{
+    "name": "OXID Modul Artikel Exporter Billiger.de Plugin",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_artikel_exporter_billiger_de_produktbox_750px.jpg",
+    "price": "34.51",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Simply generate an export file for Billiger.de",
+        "de": "Erstellen Sie einfach und unkompliziert eine Export-Datei für Billiger.de"
+    },
+    "tags": [
+        "interfaces",
+        "marketing"
+    ],
+    "versions": {
+        "1.4.0": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Artikel-Exporter-Billiger-de.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

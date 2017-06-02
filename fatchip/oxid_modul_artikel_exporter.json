@@ -1,0 +1,38 @@
+{
+    "name": "OXID Modul Artikel Exporter",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_artikel_exporter_produktbox_750px.jpg",
+    "price": "474.00",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Simply create an export file of your product items",
+        "de": "Erstellen Sie einfach und unkompliziert eine Export-Datei Ihrer Artikel."
+    },
+    "tags": [
+        "interfaces",
+        "marketing"
+    ],
+    "versions": {
+        "1.15.14": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Artikel-Exporter.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

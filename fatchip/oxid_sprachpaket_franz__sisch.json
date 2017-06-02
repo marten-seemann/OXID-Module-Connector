@@ -1,0 +1,35 @@
+{
+    "name": "OXID Sprachpaket Französisch",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_sprachpaket_franzoesisch_produktbox_750px.jpg",
+    "price": "117.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "French language files for your OXID eShop",
+        "de": "Französische Sprachdateien für Ihren OXID eShop."
+    },
+    "tags": [
+        "languages"
+    ],
+    "versions": {
+        "1.3.14": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Sprachpaket-Franzoesisch.html",
+            "url": "",
+            "supported": [
+                "5.0",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.2"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

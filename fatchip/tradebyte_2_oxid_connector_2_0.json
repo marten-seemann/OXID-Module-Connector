@@ -1,0 +1,37 @@
+{
+    "name": "Tradebyte 2 OXID Connector 2.0",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_oxid_2_tradebyte_produktbox_750px.jpg",
+    "price": "2378.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Connects Tradebyte with your OXID eShop.",
+        "de": "Der FATCHIP Tradebyte 2 OXID Connector verbindet Tradebyte mit Ihrem OXID eShop. "
+    },
+    "tags": [
+        "interfaces",
+        "logistics"
+    ],
+    "versions": {
+        "2.3.2": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-2-Tradebyte-Connector-2-0.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "name": "OXID Modul Redirect",
+    "vendor": "fatchip",
+    "type": "oxid",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_redirect_produktbox_750px.jpg",
+    "price": "236.81",
+    "license": "Commercial",
+    "id": "0",
+    "desc": {
+        "en": "Manage redirects directly from your admin panel.",
+        "de": "Steuern Sie die Weiterleitungen in Ihrem OXID eShop bequem über den Adminbereich."
+    },
+    "tags": [
+        "SEO",
+        "admin tools"
+    ],
+    "versions": {
+        "1.9.6": {
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Redirect.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
