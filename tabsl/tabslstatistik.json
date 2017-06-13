@@ -7,8 +7,8 @@
     "price": "49.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|Statistik werden relevante Informationen zum Lagerbestand und Rohertrag zur Verfügung gestellt.",
-        "de": ""
+        "en": "Display relevant information of your stock and gross earning.",
+        "de": "Mit dem OXID Modul tabsl|Statistik werden relevante Informationen zum Lagerbestand und Rohertrag zur Verfügung gestellt."
     },
     "tags": [
         "backend",
