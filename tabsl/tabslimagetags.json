@@ -7,8 +7,8 @@
     "price": "99.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|ImageTags ist es möglich für jedes Artikel- und Kategoriebild eine eigene Beschreibung pflegen.",
-        "de": ""
+        "en": "Add a separate description to each product item and category image.",
+        "de": "Mit dem OXID Modul tabsl|ImageTags ist es möglich, für jedes Artikel- und Kategoriebild eine eigene Beschreibung pflegen."
     },
     "tags": [
         "frontend",
