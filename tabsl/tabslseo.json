@@ -7,8 +7,8 @@
     "price": "99.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|SEO ist es möglich individuelle Titel für Produkte, Kategorien, Hersteller, Lieferanten und CMS-Seiten zu vergeben.",
-        "de": ""
+        "en": "Assign individual title tags for products, categories, manufacturers, vendors and CMS pages.",
+        "de": "Mit dem OXID Modul tabsl|SEO ist es möglich, individuelle Titel für Produkte, Kategorien, Hersteller, Lieferanten und CMS-Seiten zu vergeben."
     },
     "tags": [
         "frontend",
