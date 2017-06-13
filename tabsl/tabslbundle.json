@@ -7,8 +7,8 @@
     "price": "159.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|Bundle kann zu einem Artikel ein weiter (kostenpflichtig!) automatisch hinzugefügt werden.",
-        "de": ""
+        "en": "Add another (costly!) product item to the cart.",
+        "de": "Mit dem OXID Modul tabsl|Bundle kann zu einem Artikel ein weiter (kostenpflichtig!) automatisch hinzugefügt werden."
     },
     "tags": [
         "frontend",
