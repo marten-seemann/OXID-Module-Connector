@@ -7,8 +7,8 @@
     "price": "99.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|Sitemap kann für das Shop-Frontend eine Sitemap erzeugt werden.",
-        "de": ""
+        "en": "Generate a site map for the storefront of your Online shop.",
+        "de": "Mit dem OXID Modul tabsl|Sitemap kann für das Shop-Frontend eine Sitemap erzeugt werden."
     },
     "tags": [
         "frontend",
