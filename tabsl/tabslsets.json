@@ -7,8 +7,8 @@
     "price": "159.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|Sets können einzele Artikel zu einem Artikel-Set zusammengefasst werden, deren Bestände ebenfalls aktualisiert werden.",
-        "de": ""
+        "en": "Merge single product items into a product set and update their stock.",
+        "de": "Mit dem OXID Modul tabsl|Sets können einzele Artikel zu einem Artikel-Set zusammengefasst werden, deren Bestände ebenfalls aktualisiert werden."
     },
     "tags": [
         "frontend",
