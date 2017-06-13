@@ -7,8 +7,8 @@
     "price": "159.00",
     "license": "Commercial",
     "desc": {
-        "en": "Mit dem OXID Modul tabsl|Tag können zu jedem Shop-Tag individuelle SEO-Daten (Beschreibung, Titel) sowie eine Seitenbeschreibung gepflegt werden.",
-        "de": ""
+        "en": "Maintain indiviual SEO data, such as description and title.",
+        "de": "Mit dem OXID Modul tabsl|Tag können zu jedem Shop-Tag individuelle SEO-Daten (Beschreibung, Titel) sowie eine Seitenbeschreibung gepflegt werden."
     },
     "tags": [
         "frontend",
