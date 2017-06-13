@@ -1,0 +1,38 @@
+{
+    "name": "tabsl|Sets",
+    "vendor": "tabsl",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "159.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Mit dem OXID Modul tabsl|Sets können einzele Artikel zu einem Artikel-Set zusammengefasst werden, deren Bestände ebenfalls aktualisiert werden.",
+        "de": ""
+    },
+    "tags": [
+        "frontend",
+        "product presentation",
+        "marketing"
+    ],
+    "versions": {
+        "1.6.0": {
+            "project": "http://www.oxid-module.eu/module/tabsl-sets/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

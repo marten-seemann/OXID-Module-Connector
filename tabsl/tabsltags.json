@@ -1,0 +1,38 @@
+{
+    "name": "tabsl|Tags",
+    "vendor": "tabsl",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "159.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Mit dem OXID Modul tabsl|Tag können zu jedem Shop-Tag individuelle SEO-Daten (Beschreibung, Titel) sowie eine Seitenbeschreibung gepflegt werden.",
+        "de": ""
+    },
+    "tags": [
+        "frontend",
+        "seo",
+        "marketing"
+    ],
+    "versions": {
+        "2.0.0": {
+            "project": "http://www.oxid-module.eu/module/tabsl-tags/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

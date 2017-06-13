@@ -1,0 +1,38 @@
+{
+    "name": "tabsl|Statistik",
+    "vendor": "tabsl",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "49.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Mit dem OXID Modul tabsl|Statistik werden relevante Informationen zum Lagerbestand und Rohertrag zur Verfügung gestellt.",
+        "de": ""
+    },
+    "tags": [
+        "backend",
+        "analytics",
+        "admin tools"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "http://www.oxid-module.eu/module/tabsl-statistik/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

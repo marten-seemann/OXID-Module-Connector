@@ -1,0 +1,39 @@
+{
+    "name": "tabsl|ImageTags",
+    "vendor": "tabsl",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "99.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Mit dem OXID Modul tabsl|ImageTags ist es möglich für jedes Artikel- und Kategoriebild eine eigene Beschreibung pflegen.",
+        "de": ""
+    },
+    "tags": [
+        "frontend",
+        "seo",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "http://www.oxid-module.eu/module/tabsl-imagetags/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

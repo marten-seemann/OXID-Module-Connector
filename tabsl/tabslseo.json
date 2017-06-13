@@ -1,0 +1,38 @@
+{
+    "name": "tabsl|SEO",
+    "vendor": "tabsl",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "99.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "Mit dem OXID Modul tabsl|SEO ist es möglich individuelle Titel für Produkte, Kategorien, Hersteller, Lieferanten und CMS-Seiten zu vergeben.",
+        "de": ""
+    },
+    "tags": [
+        "frontend",
+        "seo",
+        "marketing"
+    ],
+    "versions": {
+        "3.0.0": {
+            "project": "http://www.oxid-module.eu/module/tabsl-seo/",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
