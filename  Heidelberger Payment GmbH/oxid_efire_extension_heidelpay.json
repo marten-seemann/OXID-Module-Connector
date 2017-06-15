@@ -1,0 +1,35 @@
+{
+    "name": "OXID eFire Extension heidelpay",
+    "vendor": " Heidelberger Payment GmbH",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/heidelpay_170-170.jpg",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "You don´t have to accept compromises concerning payment transactions by choosing heidelpay's OXID eFire Extension. The standalone module will integrate into your processes seamlessly.",
+        "de": "Die OXID eFire Extension heidelpay für alle Shopversionen (CE, PE und EE) bietet Ihnen eine flexible und individuell konfigurierbare Payment-Lösung für Ihren OXID eShop."
+    },
+    "tags": [
+        "interface",
+        "payment"
+    ],
+    "versions": {
+        "5.2.2.0": {
+            "project": "https://exchange.oxid-esales.com/OXID-Products/OXID-eFire-Extensions/OXID-eFire-Extension-heidelpay-5-1-1-2-EE-Premium-Stable-EE-PE-4-7-x-5-2-x.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
