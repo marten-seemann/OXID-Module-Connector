@@ -11,7 +11,7 @@
         "de": "Mit dieser Schnittstelle lässt sich die Zahlungsart Kauf auf Rechnung der Fa. paymorrow in Ihren OXID eShop integrieren."
     },
     "tags": [
-        "interface",
+        "interfaces",
         "payment"
     ],
     "versions": {
