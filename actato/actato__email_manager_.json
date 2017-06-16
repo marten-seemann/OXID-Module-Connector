@@ -1,0 +1,32 @@
+{
+    "name": "actato: Email Manager ",
+    "vendor": "actato",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/actato_emailmanager.png",
+    "price": "11.89",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": " This module allows you to easily customize the shop’s email templates to your liking over the shop backend. ",
+        "de": " Mit diesem Modul können Sie bequem über das Shop-Backend jedes E-Mail Template nach Ihren Wünschen bearbeiten. "
+    },
+    "tags": [
+        "",
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "1.0.1": {
+            "project": "https://exchange.oxid-esales.com/Frontend-and-User-Experience/Frontend-Templates/actato-Email-Manager-1-0-0-Release-Candidate-CE-4-9-x.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "4.9"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

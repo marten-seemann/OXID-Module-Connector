@@ -1,0 +1,32 @@
+{
+    "name": "powerTools 2.0 CE",
+    "vendor": "KMUdo AG",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/01-powertools-1-0-ce-4-7_version_2.0_klein.png",
+    "price": "0.00",
+    "license": "GPL",
+    "id": "",
+    "desc": {
+        "en": "„powerTools“ contains important and usefull tools for the OXID eShop admin. ",
+        "de": "Das Modul \"powerTools\" enthält wichtige und hilfreiche Tools für den OXID Adminbereich. "
+    },
+    "tags": [
+        "",
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "2.0": {
+            "project": "https://exchange.oxid-esales.com/de/en/Shopmanagement/Shop-Admin/powerTools-2-0-CE-2-0-Stable-CE-4-8-x-4-9-x-oxid.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
