@@ -11,7 +11,7 @@
         "de": "PAYONE bietet Ihnen jetzt mit dem Payment-Modul für Oxid eShops über 20 Zahlarten aus einer Hand."
     },
     "tags": [
-        "interface",
+        "interfaces",
         "payment"
     ],
     "versions": {
