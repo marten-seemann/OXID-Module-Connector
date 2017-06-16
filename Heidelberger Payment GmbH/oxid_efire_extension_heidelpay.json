@@ -11,7 +11,7 @@
         "de": "Die OXID eFire Extension heidelpay für alle Shopversionen (CE, PE und EE) bietet Ihnen eine flexible und individuell konfigurierbare Payment-Lösung für Ihren OXID eShop."
     },
     "tags": [
-        "interface",
+        "interfaces",
         "payment"
     ],
     "versions": {
