@@ -1,0 +1,34 @@
+{
+    "name": "KRYD Lifecycle-Marketing",
+    "vendor": "KRYD GmbH",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/favicon(3).png",
+    "price": "0.00",
+    "license": "GPL",
+    "id": "",
+    "desc": {
+        "en": "Interface to kryd.com",
+        "de": "Schnittstelle zu kryd.com"
+    },
+    "tags": [
+        "interfaces",
+        "marketing"
+    ],
+    "versions": {
+        "1.0.1": {
+            "project": "https://exchange.oxid-esales.com/Marketing-and-Campaigns/E-Mail/KRYD-Lifecycle-Marketing-1-0-1-Stable-CE-4-7-x-5-1-x.html",
+            "url": "",
+            "supported": [
+                "5.1",
+                "5.0",
+                "4.8",
+                "4.7",
+                ""
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

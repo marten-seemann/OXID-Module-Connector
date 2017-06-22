@@ -1,0 +1,33 @@
+{
+    "name": "cash discount per manufacturer ",
+    "vendor": " Internetfabrik GmbH",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/oxid-modul_skonto3_170(1).png",
+    "price": "117.81",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "With our new \"manufacturer-specific cash discount\" module, a rate of reduction can be specified per manufacturer. ",
+        "de": "Mit unserem neuen Modul \"herstellerspezifisches Skonto\" kann je Hersteller ein Rabattsatz angegeben werden."
+    },
+    "tags": [
+        "calculation",
+        "frontend",
+        "marketing"
+    ],
+    "versions": {
+        "1.0": {
+            "project": "https://exchange.oxid-esales.com/Order-and-Delivery/Order-Management/cash-discount-per-manufacturer-1-0-Stable-CE-4-7-x-4-9-x.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

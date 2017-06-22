@@ -1,0 +1,31 @@
+{
+    "name": "Pinned navigation bar ",
+    "vendor": "OXID-Design",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/fixednavbar.jpg",
+    "price": "22.61",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": " Store categories are Fixes the down-scroll up and remain visible for your customers. ",
+        "de": " Shop Kategorien werden beim runter-scrollen oben Fixiert und bleiben für Ihr Kunden immer sichtbar. "
+    },
+    "tags": [
+        "frontend",
+        "templates"
+    ],
+    "versions": {
+        "1.0": {
+            "project": "https://exchange.oxid-esales.com/Frontend-and-User-Experience/Usability/Pinned-navigation-bar-1-0-Stable-CE-4-8-x-4-9-x.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
