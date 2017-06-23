@@ -3,16 +3,17 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_redirect_produktbox_750px.jpg",
-    "price": "236.81",
+    "price": "199",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcRedirect",
     "desc": {
         "en": "Manage redirects directly from your admin panel.",
         "de": "Steuern Sie die Weiterleitungen in Ihrem OXID eShop bequem über den Adminbereich."
     },
     "tags": [
         "SEO",
-        "admin tools"
+        "admin tools",
+        "backend"
     ],
     "versions": {
         "1.9.6": {

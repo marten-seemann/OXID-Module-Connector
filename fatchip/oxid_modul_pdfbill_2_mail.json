@@ -3,9 +3,9 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_pdf_bill_2_mail_produktbox_750px.jpg",
-    "price": "34.51",
+    "price": "29",
     "license": "Commercial",
-    "id": "0",
+    "id": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-PdfBill-2-Mail.html",
     "desc": {
         "en": "This module attaches PDF invoices automatically to the order confirmation e-mail.",
         "de": "Mit diesem Modul lässt sich eine PDF- Rechnung automatisch an die ausgehende Bestellbestätigungsmail anhängen."

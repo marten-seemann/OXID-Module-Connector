@@ -3,16 +3,17 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_portal_taxonomie_produktbox_750px.jpg",
-    "price": "117.81",
+    "price": "99",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcPortalTaxonomy",
     "desc": {
-        "en": "Generate a product feed for Google Shopping",
-        "de": "Erstellung eines Produktfeeds für Google-Shopping"
+        "en": "With this plugin you can map your product categories using the Google shopping categories.",
+        "de": "Mit diesem Plugin können Sie Ihre Produktkategorien mit den Google-Shopping Kategorien mappen."
     },
     "tags": [
         "interfaces",
-        "marketing"
+        "marketing",
+        "backend"
     ],
     "versions": {
         "1.2.1": {

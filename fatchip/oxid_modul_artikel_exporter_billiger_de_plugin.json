@@ -3,15 +3,16 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_artikel_exporter_billiger_de_produktbox_750px.jpg",
-    "price": "34.51",
+    "price": "29",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcArticleExporterBilliger",
     "desc": {
         "en": "Simply generate an export file for Billiger.de",
         "de": "Erstellen Sie einfach und unkompliziert eine Export-Datei für Billiger.de"
     },
     "tags": [
         "interfaces",
+        "backend",
         "marketing"
     ],
     "versions": {
