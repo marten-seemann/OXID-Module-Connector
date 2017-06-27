@@ -3,15 +3,16 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_artikel_exporter_produktbox_750px.jpg",
-    "price": "474.00",
+    "price": "335.29",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcArticleExporter",
     "desc": {
-        "en": "Simply create an export file of your product items",
+        "en": "Simply create an export file of your products",
         "de": "Erstellen Sie einfach und unkompliziert eine Export-Datei Ihrer Artikel."
     },
     "tags": [
         "interfaces",
+        "backend",
         "marketing"
     ],
     "versions": {

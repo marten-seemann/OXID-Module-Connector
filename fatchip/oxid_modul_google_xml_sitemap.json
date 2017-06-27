@@ -3,19 +3,20 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_google_xml_sitemap_produktbox_750px.jpg",
-    "price": "236.81",
+    "price": "167.23",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcStats",
     "desc": {
         "en": "The most comfortable way to an always up-to-date XML site map for Google.",
         "de": "Der unkomplizierteste Weg zur immer aktuellen Google-XML-Sitemap."
     },
     "tags": [
-        "SEO"
+        "SEO",
+        "backend"
     ],
     "versions": {
         "3.5.0": {
-            "project": "http://shop.fatchip.de/OXID-Modul-Google-XML-Sitemap.html",
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Plugin-Google-XML-Sitemap.html",
             "url": "",
             "supported": [
                 "5.3",

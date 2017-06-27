@@ -2,23 +2,33 @@
     "name": "OXID Ipayment Connector ",
     "vendor": "fatchip",
     "type": "oxid",
-    "picture": "",
-    "price": "449.00",
+    "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_ipayment_connector_produktbox_750px.jpg",
+    "price": "419.32",
     "license": "Commercial",
-    "id": "0",
+    "id": "az_ipayment",
     "desc": {
-        "en": "",
-        "de": "Dieses von der OXID eSales AG zertifizierte Modul liefert die Anbindung Ihres OXID-Shops an das Online-Bezahlsystem Ipayment der 1&1 Internet AG."
+        "en": "This certified plugin is the connection of your OXID shop to the online payment system Ipayment.",
+        "de": "Mit dieser zertifizierten Schnittstelle lässt sich das Online-Bezahlsystem Ipayment der Firma 1&1 in Ihren OXID eShop integrieren."
     },
     "tags": [
-        "payment"
+        "payment",
+        "checkout",
+        "frontend"
     ],
     "versions": {
         "": {
-            "project": "http://shop.fatchip.de/OXID-Ipayment-Connector.html",
+            "project": "https://www.fatchip.de/Plugins/OXID-eShop/OXID-Ipayment-Connector.html",
             "url": "",
             "supported": [
-                ""
+                "5.0",
+                "5.1",
+                "5.2",
+                "5.3",
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
             ],
             "mapping": {
                 "src": "",

@@ -3,9 +3,9 @@
     "vendor": "fatchip",
     "type": "oxid",
     "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_betreiber_stats_produktbox_750px.jpg",
-    "price": "355.81",
+    "price": "251.26",
     "license": "Commercial",
-    "id": "0",
+    "id": "fcStats",
     "desc": {
         "en": "Get any reportings easy and clearly via OXID admin panel.",
         "de": "Werten Sie CEO Statistiken bequem und übersichtlich im OXID Admin Bereich aus."

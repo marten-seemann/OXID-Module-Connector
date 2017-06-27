@@ -1,0 +1,40 @@
+{
+  "name": "OXID Payone Connector",
+  "vendor": "fc",
+  "type": "oxid",
+  "picture": "https://www.fatchip.de/out/pictures/generated/product/1/540_340_100/fc_payone_connector_produktbox_750px.jpg",
+  "price": "0.00",
+  "license": "Commercial",
+  "id": "fcPayOne",
+  "desc": {
+    "en": "With this certified interface, PAYONE can easily be integrated in your OXID eShop.",
+    "de": "PAYONE bietet Ihnen jetzt mit dem Payment-Modul für Oxid eShops über 20 Zahlarten aus einer Hand."
+  },
+  "tags": [
+    "interfaces",
+    "payment",
+    "checkout"
+
+  ],
+  "versions": {
+    "2.1.7": {
+      "project": "https://github.com/PAYONE-GmbH/oxid-5",
+      "url": "",
+      "supported": [
+        "5.3",
+        "5.2",
+        "5.1",
+        "5.0",
+        "4.9",
+        "4.8",
+        "4.7",
+        "4.6",
+        "4.10"
+      ],
+      "mapping": {
+        "src": "copy_this/modules/fcPayOne/",
+        "dest": "modules/fcPayOne/"
+      }
+    }
+  }
+}
