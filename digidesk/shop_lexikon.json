@@ -3,7 +3,7 @@
     "vendor": "digidesk",
     "type": "oxid",
     "picture": "http://www.digidesk.de/wp-content/uploads/2015/07/dd_lexikon_webicon_250x250.png",
-    "price": "593.81",
+    "price": "499.00",
     "license": "Commercial",
     "id": "0",
     "desc": {
@@ -12,7 +12,8 @@
     },
     "tags": [
         "SEO",
-        "product presentation"
+        "product presentation",
+        "content"
     ],
     "versions": {
         "": {
