@@ -4,6 +4,7 @@
 	"id": "scrolltoselected",
     "type": "oxid",
     "picture": "",
+    "price": "0.00",
     "license": "unknown",
     "desc": {
         "en": "Lists in OXID eShop backend scroll automatically to the currently selected entry",
