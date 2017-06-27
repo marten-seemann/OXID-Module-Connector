@@ -1,8 +1,8 @@
 {
-    "name": "Oxid AG Admin ACL Rechte Verwaltung",
+    "name": "Admin ACL Rechte Verwaltung",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/rechte.png",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-acl-admin-rechte.png",
     "price": "39.00",
     "license": "Commercial",
     "id": "",
@@ -16,7 +16,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/Oxid-AG-Admin-ACL-Rechte-Verwaltung.html",
+            "project": "https://www.ecomponents.de/module/admin-acl-rechte-verwaltung/",
             "url": "",
             "supported": [
                 "4.9",

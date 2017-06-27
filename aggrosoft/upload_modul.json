@@ -2,8 +2,8 @@
     "name": "Upload Modul",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/upload.png",
-    "price": "99.95",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-upload-modul.png",
+    "price": "149.00",
     "license": "Commercial",
     "id": "",
     "desc": {
@@ -16,7 +16,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/Upload-Modul.html",
+            "project": "https://www.ecomponents.de/module/oxid-upload-modul/",
             "url": "",
             "supported": [
                 "4.9",

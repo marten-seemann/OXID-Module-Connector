@@ -2,7 +2,7 @@
     "name": "PayPal Payment Gateway inkl EXPRESS und PayPal Plus",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/paypal(1).png",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-paypal.png",
     "price": "49.00",
     "license": "Commercial",
     "id": "",
@@ -16,7 +16,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/PayPal-Payment-Gateway-inkl-EXPRESS-und-PayPal-Plus.html",
+            "project": "https://www.ecomponents.de/module/paypal-gateway-inkl-express-und-paypal-plus/",
             "url": "",
             "supported": [
                 "4.9",

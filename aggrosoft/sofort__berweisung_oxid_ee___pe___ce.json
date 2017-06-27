@@ -2,7 +2,7 @@
     "name": "Sofortüberweisung Oxid EE / PE / CE",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/sofort(1).png",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/03/ecomponents-box-sofortueberweisung.png",
     "price": "49.00",
     "license": "Commercial",
     "id": "",
@@ -16,7 +16,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/Sofortueberweisung-OXID-EE-PE-CE.html",
+            "project": "https://www.ecomponents.de/module/sofortueberweisung-oxid-ee-pe-ce/",
             "url": "",
             "supported": [
                 "4.9",

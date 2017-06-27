@@ -2,7 +2,7 @@
     "name": "Oxid Optimizer",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/agoptimizer-box(0).png",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-optimizer.png",
     "price": "99.00",
     "license": "Commercial",
     "id": "",
@@ -17,7 +17,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/Oxid-Optimizer.html",
+            "project": "https://www.ecomponents.de/module/oxid-optimizer/",
             "url": "",
             "supported": [
                 ""

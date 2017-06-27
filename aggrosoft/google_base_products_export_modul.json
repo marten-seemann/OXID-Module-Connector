@@ -1,8 +1,8 @@
 {
-    "name": "Google Base / Products Export Modul",
+    "name": "Google Products Export Modul",
     "vendor": "aggrosoft",
     "type": "oxid",
-    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/googleproducts.png",
+    "picture": "https://www.ecomponents.de/wp-content/uploads/sites/3/2017/04/ecomponents-box-google-merchant-center.png",
     "price": "49.00",
     "license": "Commercial",
     "id": "",
@@ -17,7 +17,7 @@
     ],
     "versions": {
         "": {
-            "project": "https://www.ecomponents.de/Module/Google-Base-Products-Export-Modul.html",
+            "project": "https://www.ecomponents.de/module/google-products-export-modul/",
             "url": "",
             "supported": [
                 "4.9",
