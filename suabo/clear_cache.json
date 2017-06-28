@@ -1,0 +1,34 @@
+{
+    "name": "Clear Cache",
+    "vendor": "suabo",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/clearcache_logo(1).png",
+    "price": "0.00",
+    "license": "GPL",
+    "id": "",
+    "desc": {
+        "en": "Clear your shop cache easily from admin backend. ",
+        "de": "Shop Cache einfach aus dem Admin Backend leeren. "
+    },
+    "tags": [
+        "",
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "1.1.6": {
+            "project": "https://exchange.oxid-esales.com/Shop-Management/Shop-Admin/Clear-Cache-1-1-6-Stable-EE-PE-4-7-x-5-0-x-4-8-x-5-1-x.html",
+            "url": "",
+            "supported": [
+                "5.1",
+                "5.0",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

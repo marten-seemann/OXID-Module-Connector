@@ -1,0 +1,36 @@
+{
+    "name": "Semantic Search ",
+    "vendor": "CELEBROS",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/celebroslogo170x170.png",
+    "price": "3094.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "Search: The Celebros Conversion Pro extension is the Interface between your OXID eShop and the intelligent Site Search, Navigation, Filter, AutoComplete, AutoSuggest and Analytics tools",
+        "de": "Suche: Das Celebros Modul ist die geprüfte Schnittstelle zwischen Ihrem OXID eShop und der intelligenten Suche, Navigation, Filter, AutoComplete, AutoSuggest und Analytics"
+    },
+    "tags": [
+        "frontend",
+        "product presentation",
+        "search"
+    ],
+    "versions": {
+        "2.0.0": {
+            "project": "https://exchange.oxid-esales.com/Frontend-and-User-Experience/Search-Navigation-and-Filters/Semantic-Search-2-0-0-Stable-EE-PE-4-6-x-4-8-x-5-1-x.html",
+            "url": "",
+            "supported": [
+                "5.1",
+                "5.0",
+                "4.8",
+                "4.7",
+                "4.6",
+                ""
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

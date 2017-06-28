@@ -1,0 +1,34 @@
+{
+    "name": "AJAXFrontEdit",
+    "vendor": "itratos",
+    "type": "oxid",
+    "picture": "https://exchange.oxid-esales.com/out/pictures/generated/product/icon/170_170_75/ajaxedit.png",
+    "price": "29.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": " AJAXFrontEdit is a frontedit mode for OXID eShop. ",
+        "de": "AJAXFrontEdit ist ein FrontEditor Modul für OXID eShop ab Version 4.5. "
+    },
+    "tags": [
+        "admin tools",
+        "frontend"
+    ],
+    "versions": {
+        "1.0.4": {
+            "project": "https://exchange.oxid-esales.com/Frontend-and-User-Experience/Frontend-Templates/AJAXFrontEdit-1-0-4-Stable-CE-4-5-x-4-9-x.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
